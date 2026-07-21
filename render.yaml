@@ -8,6 +8,8 @@ services:
     startCommand: npm run start:api
     healthCheckPath: /health
     envVars:
+      - key: NODE_VERSION
+        value: "22.11.0"
       - key: NODE_ENV
         value: production
       - key: PORT
