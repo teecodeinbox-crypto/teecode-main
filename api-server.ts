@@ -1,3 +1,9 @@
+import { WebSocket } from 'ws';
+// Polyfill WebSocket for Supabase client on older Node versions
+if (!globalThis.WebSocket) {
+  (globalThis as any).WebSocket = WebSocket;
+}
+
 import express from 'express';
 import cors from 'cors';
 import { createClient } from '@supabase/supabase-js';
