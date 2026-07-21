@@ -1,0 +1,8 @@
+.env
+node_modules
+dist
+orders.json
+.git
+*.log
+.DS_Store
+src/lib/setup-supabase.ts

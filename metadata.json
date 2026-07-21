@@ -1,0 +1,8 @@
+{
+  "name": "TeeCode",
+  "description": "Premium oversized streetwear e-commerce store for bold everyday fashion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
