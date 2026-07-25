@@ -13,9 +13,7 @@
     "start": "node dist/server.cjs",
     "start:api": "node dist/api-server.cjs",
     "preview": "vite preview",
-    "deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name=teecode",
-    "preview:cloudflare": "wrangler pages dev dist",
-    "deploy:vercel": "vercel --name teecode-store --prod --yes",
+    "deploy": "npx vercel --prod --yes",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
   },
