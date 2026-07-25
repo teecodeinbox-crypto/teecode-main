@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, MessageCircle, Send, Check } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Send, Check, Loader2 } from 'lucide-react';
+import { apiUrl } from '../lib/api';
 
 export default function ContactView() {
   const [formData, setFormData] = useState({
@@ -8,15 +9,37 @@ export default function ContactView() {
     orderId: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setLoading(true);
+    setErrorMsg('');
+
+    try {
+      const res = await fetch(apiUrl('/contact'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'Failed to send message.');
+      }
+
+      setSubmitted(true);
       setFormData({ name: '', email: '', orderId: '', message: '' });
-    }, 4000);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err: any) {
+      setErrorMsg(err.message || 'Error submitting message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,7 +92,7 @@ export default function ContactView() {
 
               {/* Email Card */}
               <a
-                href="mailto:support@teecode.store"
+                href="mailto:info@teecode.store"
                 className="flex items-start space-x-4 p-4 border border-zinc-200 hover:border-street-black hover:bg-zinc-50 transition-all block text-left"
               >
                 <div className="p-3 bg-rose-50 text-street-red rounded-none shrink-0 border border-rose-200">
@@ -77,7 +100,7 @@ export default function ContactView() {
                 </div>
                 <div>
                   <h4 className="font-display font-black text-xs text-street-black uppercase tracking-wider">EMAIL CORRESPONDENCE</h4>
-                  <p className="mt-1 font-bold text-street-black">support@teecode.store</p>
+                  <p className="mt-1 font-bold text-street-black">info@teecode.store</p>
                   <p className="text-[10px] text-zinc-400 mt-1 uppercase">For business queries or bulk orders deck.</p>
                 </div>
               </a>
@@ -174,14 +197,30 @@ export default function ContactView() {
                   />
                 </div>
 
+                {errorMsg && (
+                  <div className="bg-rose-50 border border-rose-200 text-street-red p-3 text-xs font-mono">
+                    {errorMsg}
+                  </div>
+                )}
+
                 {/* Submit button */}
                 <button
                   id="contact-submit-btn"
                   type="submit"
-                  className="w-full bg-street-black hover:bg-street-red text-white font-display font-bold py-4 tracking-widest uppercase flex items-center justify-center space-x-2.5 transition-all duration-300"
+                  disabled={loading}
+                  className="w-full bg-street-black hover:bg-street-red text-white font-display font-bold py-4 tracking-widest uppercase flex items-center justify-center space-x-2.5 transition-all duration-300 disabled:opacity-50"
                 >
-                  <Send className="h-4 w-4" />
-                  <span>SEND CREW MESSAGE</span>
+                  {loading ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <span>DISPATCHING MESSAGE...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-4 w-4" />
+                      <span>SEND CREW MESSAGE</span>
+                    </>
+                  )}
                 </button>
 
               </form>

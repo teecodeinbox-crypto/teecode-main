@@ -12,6 +12,7 @@ import crypto from 'crypto';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
+import nodemailer from 'nodemailer';
 
 dotenv.config();
 
@@ -32,6 +33,49 @@ const razorpayKeySecret = process.env.RAZORPAY_KEY_SECRET || '';
 const razorpay = razorpayKeyId && razorpayKeySecret
   ? new Razorpay({ key_id: razorpayKeyId, key_secret: razorpayKeySecret })
   : null;
+
+// =====================
+// Mail Server Setup
+// =====================
+const smtpHost = process.env.SMTP_HOST || '';
+const smtpPort = Number(process.env.SMTP_PORT) || 587;
+const smtpUser = process.env.SMTP_USER || '';
+const smtpPass = process.env.SMTP_PASS || '';
+const supportEmail = process.env.SUPPORT_EMAIL || 'info@teecode.store';
+const smtpFrom = process.env.SMTP_FROM || `"TeeCode Apparel" <${supportEmail}>`;
+
+const mailTransporter = (smtpHost && smtpUser && smtpPass)
+  ? nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: process.env.SMTP_SECURE === 'true' || smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    })
+  : null;
+
+async function sendMail(to: string, subject: string, html: string, replyTo?: string) {
+  if (!mailTransporter) {
+    console.log(`[Mail Server (Simulated)] Email to: ${to} | Subject: "${subject}"`);
+    return false;
+  }
+  try {
+    await mailTransporter.sendMail({
+      from: smtpFrom,
+      to,
+      subject,
+      html,
+      replyTo: replyTo || undefined,
+    });
+    console.log(`[Mail Server] Email sent to ${to} for "${subject}"`);
+    return true;
+  } catch (err) {
+    console.error(`[Mail Server Error] Failed to send email to ${to}:`, err);
+    return false;
+  }
+}
 
 // =====================
 // Fallback: Local file storage
@@ -225,7 +269,106 @@ app.post('/orders', async (req, res) => {
     console.log(`[Local] Order ${orderId}, ${customerName}, ₹${total}`);
   }
 
+  // Send email notifications
+  const itemsListHtml = items.map((i: OrderItem) => `
+    <tr>
+      <td style="padding: 8px; border-bottom: 1px solid #eee;">${i.name} (${i.size})</td>
+      <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: center;">${i.quantity}</td>
+      <td style="padding: 8px; border-bottom: 1px solid #eee; text-align: right;">₹${i.price * i.quantity}</td>
+    </tr>
+  `).join('');
+
+  const orderEmailHtml = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e4e4e7; padding: 24px; color: #18181b;">
+      <h2 style="color: #dc2626; margin-top: 0;">TEECODE APPAREL</h2>
+      <h3 style="margin-bottom: 16px;">Order Confirmation #${orderId}</h3>
+      <p>Hi <strong>${customerName}</strong>,</p>
+      <p>Thank you for your order! We have registered your request and are preparing your drop for dispatch within 24-48 hours.</p>
+
+      <h4 style="margin-top: 24px; border-bottom: 2px solid #18181b; padding-bottom: 6px;">ORDER SUMMARY</h4>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 14px;">
+        <thead>
+          <tr style="background: #f4f4f5; text-align: left;">
+            <th style="padding: 8px;">Item</th>
+            <th style="padding: 8px; text-align: center;">Qty</th>
+            <th style="padding: 8px; text-align: right;">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${itemsListHtml}
+        </tbody>
+      </table>
+      <p style="text-align: right; font-size: 16px;"><strong>Total Amount: ₹${total}</strong></p>
+
+      <h4 style="margin-top: 24px; border-bottom: 2px solid #18181b; padding-bottom: 6px;">DELIVERY ADDRESS</h4>
+      <p style="font-size: 14px; line-height: 1.5;">
+        ${customerName}<br/>
+        ${address}, ${city}, ${state} - ${pincode}<br/>
+        Phone: ${phone}
+      </p>
+
+      <div style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #e4e4e7; font-size: 12px; color: #71717a;">
+        <p>For tracking queries, reply to this email or write to <a href="mailto:${supportEmail}" style="color: #dc2626;">${supportEmail}</a>.</p>
+      </div>
+    </div>
+  `;
+
+  if (newOrder.email) {
+    sendMail(newOrder.email, `Order Confirmation #${orderId} - TeeCode`, orderEmailHtml);
+  }
+  sendMail(supportEmail, `[New Order] #${orderId} - ₹${total} by ${customerName}`, orderEmailHtml);
+
   res.status(201).json({ success: true, order: newOrder });
+});
+
+// =====================
+// Contact: Mail Server
+// =====================
+app.post('/contact', async (req, res) => {
+  const { name, email, orderId, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Name, email, and message are required.' });
+  }
+
+  const adminEmailHtml = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e4e4e7; padding: 24px;">
+      <h2 style="color: #dc2626; margin-top: 0;">TEECODE SUPPORT QUERY</h2>
+      <p><strong>From:</strong> ${name} (&lt;${email}&gt;)</p>
+      ${orderId ? `<p><strong>Order ID:</strong> ${orderId}</p>` : ''}
+      <h4 style="border-bottom: 2px solid #18181b; padding-bottom: 6px;">MESSAGE</h4>
+      <p style="background: #f4f4f5; padding: 16px; border-left: 4px solid #dc2626; font-size: 14px; white-space: pre-wrap;">${message}</p>
+    </div>
+  `;
+
+  const userEmailHtml = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e4e4e7; padding: 24px;">
+      <h2 style="color: #dc2626; margin-top: 0;">TEECODE CREW</h2>
+      <p>Hi <strong>${name}</strong>,</p>
+      <p>We received your message regarding: <em>"${message.slice(0, 80)}${message.length > 80 ? '...' : ''}"</em></p>
+      <p>Our support desk has logged your query and will reply within 12 hours.</p>
+      <br/>
+      <p>Best regards,<br/><strong>TeeCode Team</strong><br/><a href="mailto:${supportEmail}" style="color: #dc2626;">${supportEmail}</a></p>
+    </div>
+  `;
+
+  await sendMail(supportEmail, `[Contact Form] Query from ${name}`, adminEmailHtml, email);
+  await sendMail(email, `We received your query - TeeCode Support`, userEmailHtml);
+
+  res.json({ success: true, message: 'Message sent successfully.' });
+});
+
+// =====================
+// Mail: Server Status Check
+// =====================
+app.get('/mail/status', (req, res) => {
+  res.json({
+    configured: !!mailTransporter,
+    smtpHost: smtpHost || 'Not set',
+    smtpPort,
+    supportEmail,
+    smtpFrom,
+  });
 });
 
 // =====================

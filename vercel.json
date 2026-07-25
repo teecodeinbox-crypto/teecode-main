@@ -1,9 +1,12 @@
 {
+  "name": "teecode-main",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "env": {
-    "VITE_API_URL": "https://teecode-api.onrender.com"
+  "build": {
+    "env": {
+      "VITE_API_URL": "https://teecode-main.onrender.com"
+    }
   },
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
