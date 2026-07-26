@@ -142,7 +142,7 @@ export default function HomeView() {
       </section>
       
       {/* 1. Hero Section */}
-      <section id="hero-section" className="relative bg-street-black text-white min-h-[90vh] md:min-h-[85vh] flex items-center bg-grid-pattern overflow-hidden py-16">
+      <section id="hero-section" aria-label="Hero Section" className="relative bg-street-black text-white min-h-[90vh] md:min-h-[85vh] flex items-center bg-grid-pattern overflow-hidden py-16">
         {/* Background glow effects */}
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-street-red/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-zinc-800/25 rounded-full blur-3xl"></div>
@@ -151,8 +151,8 @@ export default function HomeView() {
           
           {/* Hero Left Content */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 text-xs font-mono text-street-red uppercase tracking-widest rounded-full">
-              <Sparkles className="h-3 w-3 animate-spin" />
+            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3.5 py-1 text-xs font-mono text-street-red uppercase tracking-widest rounded-full shadow-inner">
+              <Sparkles className="h-3.5 w-3.5 animate-pulse" />
               <span>THE 240 GSM DROP IS LIVE</span>
             </div>
 
@@ -162,36 +162,33 @@ export default function HomeView() {
               animate="show"
               className="font-display text-4xl sm:text-6xl xl:text-7xl font-black tracking-tighter uppercase leading-[0.95] text-white"
             >
-              {renderWords("Streetwear Tees")} <br />
+              {renderWords("WEAR THE CODE.")} <br />
               <span className="inline-block">
-                {renderWords("Built for Street", "text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-street-red")}
-              </span> <br />
-              {renderWords("Culture.")}
+                {renderWords("OWN THE STREET.", "text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-street-red")}
+              </span>
             </motion.h1>
 
-            <p className="text-zinc-400 text-sm sm:text-base max-w-lg leading-relaxed font-mono">
-              Heavier construction. Clean boxy drapes. Drop shoulders. Raw street typography. Pre-shrunk, premium 100% combed cotton built for everyday hustle.
+            <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed font-sans">
+              Premium oversized graphic T-shirts designed for creators, gamers, anime lovers, and streetwear enthusiasts. Crafted for comfort, built for everyday style.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 id="hero-shop-now-cta"
                 onClick={() => navigate('/shop')}
-                className="group flex items-center justify-center space-x-2.5 bg-white text-street-black font-display font-bold px-8 py-4 tracking-widest uppercase hover:bg-street-red hover:text-white transition-all duration-300 shadow-xl rounded-none"
+                className="group flex items-center justify-center space-x-2.5 bg-white text-street-black font-display font-bold px-8 py-4 tracking-widest uppercase hover:bg-street-red hover:text-white transition-all duration-300 shadow-xl rounded-full"
               >
-                <span>SHOP THE COLLECTION</span>
+                <span>SHOP COLLECTION</span>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1.5 transition-transform" />
               </button>
 
-              <a
-                id="hero-whatsapp-cta"
-                href="https://wa.me/919196294654?text=Hi%20TeeCode!%20I%20saw%20your%20premium%20streetwear%20hero%20drop%20and%20want%20to%20order."
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center space-x-2 bg-transparent border-2 border-zinc-700 text-white hover:border-street-red hover:bg-zinc-950 px-8 py-4 font-mono text-xs font-bold uppercase tracking-widest transition-all"
+              <button
+                id="hero-new-arrivals-cta"
+                onClick={() => navigate('/shop?sort=newest')}
+                className="flex items-center justify-center space-x-2 bg-zinc-900 border border-zinc-700 text-white hover:border-street-red hover:bg-zinc-800 px-8 py-4 font-mono text-xs font-bold uppercase tracking-widest transition-all rounded-full"
               >
-                <span>ORDER ON WHATSAPP</span>
-              </a>
+                <span>EXPLORE NEW ARRIVALS</span>
+              </button>
             </div>
 
             {/* Quick trust metrics */}
@@ -202,34 +199,216 @@ export default function HomeView() {
               </div>
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white font-display">100%</h3>
-                <p className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest">Premium Cotton</p>
+                <p className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest">Organic Cotton</p>
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white font-display">₹799+</h3>
-                <p className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest">Unbeatable Value</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-display">4.9 ★</h3>
+                <p className="text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest">10,000+ Reviews</p>
               </div>
             </div>
           </div>
 
           {/* Hero Right Visual Column */}
           <div className="lg:col-span-5 relative flex justify-center">
-            <div className="relative w-full max-w-[380px] aspect-[3/4] bg-zinc-900 border-4 border-zinc-800 p-2 shadow-2xl relative">
-              <div className="absolute top-4 left-4 bg-street-red text-white text-[10px] font-mono px-2 py-0.5 z-10 tracking-widest uppercase">
-                LIMIT DROP
+            <div className="relative w-full max-w-[380px] aspect-[3/4] bg-zinc-900 border-2 border-zinc-800 p-2 shadow-2xl rounded-2xl overflow-hidden group">
+              <div className="absolute top-4 left-4 bg-street-red text-white text-[10px] font-mono px-2.5 py-1 z-10 tracking-widest uppercase font-bold rounded-md">
+                LIMITED DROP
               </div>
               <img
                 src="https://res.cloudinary.com/dtzyjynai/image/upload/v1783110775/6b74de01-cb81-40b9-b680-892ffead5342_plu2g1.png"
-                alt="Streetwear Fit Model"
+                alt="TeeCode Oversized Streetwear Model"
+                loading="lazy"
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover transition-all duration-700"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 rounded-xl"
               />
-              <div className="absolute -bottom-5 -right-5 bg-white text-street-black border border-zinc-200 p-4 font-display font-black text-xs uppercase tracking-tight shadow-xl flex items-center space-x-2">
-                <span>CYBER DROP</span>
-                <span className="text-street-red">₹799</span>
+              <div className="absolute bottom-4 left-4 right-4 bg-street-black/90 backdrop-blur-md text-white border border-zinc-700/80 p-4 font-display font-black text-xs uppercase tracking-tight shadow-xl flex items-center justify-between rounded-xl">
+                <div>
+                  <p className="text-white font-bold text-sm">CYBER ARCHIVE TEE</p>
+                  <p className="text-zinc-400 font-mono text-[10px] tracking-widest">240 GSM HEAVYWEIGHT</p>
+                </div>
+                <span className="text-street-red font-mono text-base font-bold">₹799</span>
               </div>
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* 2. Promotional Banner Section */}
+      <section aria-label="Promotional Offer" className="bg-gradient-to-r from-zinc-950 via-street-black to-zinc-950 py-10 border-y border-zinc-800 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-street-red/10 rounded-full blur-3xl"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-left space-y-1.5">
+            <span className="inline-block bg-street-red text-white text-[10px] font-mono font-bold px-2.5 py-0.5 uppercase tracking-widest rounded-md">
+              LIMITED-TIME OFFER
+            </span>
+            <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight">
+              GET UP TO <span className="text-street-red">30% OFF</span> ON SELECTED COLLECTIONS
+            </h2>
+            <p className="text-zinc-400 font-mono text-xs">
+              Free express shipping across India on qualifying orders. Use code <span className="text-white font-bold border-b border-street-red">STREET30</span> at checkout.
+            </p>
+          </div>
+          <button
+            onClick={() => navigate('/shop?sort=sale')}
+            className="shrink-0 bg-street-red hover:bg-red-600 text-white font-display font-bold px-8 py-3.5 tracking-widest uppercase text-xs transition-all shadow-lg hover:shadow-street-red/20 rounded-full"
+          >
+            CLAIM OFFER NOW
+          </button>
+        </div>
+      </section>
+
+      {/* 3. Feature Cards Grid */}
+      <section aria-label="Feature Cards" className="bg-zinc-900 text-white py-16 border-b border-zinc-800 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-2 mb-12">
+            <span className="font-mono text-xs text-street-red uppercase tracking-widest font-bold">CRAFTED FOR THE STREETS</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+              WHY CHOOSE TEECODE?
+            </h2>
+            <p className="text-zinc-400 font-mono text-xs max-w-xl mx-auto">
+              Engineered with heavyweight organic fabrics, precision boxy silhouettes, and high-density street graphic prints.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Premium Heavyweight Cotton',
+                desc: '240 GSM pre-shrunk, 100% combed organic cotton built for structure, durability, and a premium boxy drape.',
+                icon: Check,
+              },
+              {
+                title: 'Oversized Streetwear Fit',
+                desc: 'Custom drop-shoulder tailoring designed to provide an effortless, high-fashion urban silhouette.',
+                icon: Check,
+              },
+              {
+                title: 'High-Quality Graphic Prints',
+                desc: 'High-density screen and DTG prints engineered to resist cracking and fading over endless washes.',
+                icon: Check,
+              },
+              {
+                title: 'Comfortable All-Day Wear',
+                desc: 'Breathable weave crafted for all-day comfort, active street movement, and humidity resistance.',
+                icon: Check,
+              },
+              {
+                title: 'Fast Shipping Across India',
+                desc: 'Dispatched within 24-48 hours with real-time SMS & WhatsApp door-to-door tracking notifications.',
+                icon: Check,
+              },
+              {
+                title: 'Secure Checkout',
+                desc: 'Encrypted pre-paid UPI, credit/debit cards, and hassle-free Cash On Delivery (COD) options.',
+                icon: Check,
+              },
+            ].map((feature, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.2 }}
+                className="bg-zinc-950/80 border border-zinc-800 hover:border-street-red p-6 text-left space-y-3 rounded-xl transition-all shadow-md hover:shadow-xl hover:shadow-street-red/5 backdrop-blur-md"
+              >
+                <div className="w-9 h-9 rounded-full bg-street-red/10 border border-street-red/30 flex items-center justify-center text-street-red">
+                  <feature.icon className="h-5 w-5 stroke-[2.5]" />
+                </div>
+                <h3 className="font-display font-black text-lg uppercase tracking-tight text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-zinc-400 font-sans text-xs leading-relaxed">
+                  {feature.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Trending Collections Grid */}
+      <section aria-label="Trending Collections" className="bg-white py-16 border-b border-zinc-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-2 mb-12">
+            <span className="font-mono text-xs text-street-red uppercase tracking-widest font-bold">CURATED CATEGORIES</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-street-black">
+              TRENDING COLLECTIONS
+            </h2>
+            <p className="text-zinc-500 font-mono text-xs max-w-lg mx-auto">
+              Explore specialized oversized graphic drops tailored for your personal street identity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {[
+              { name: 'Anime Collection', image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80', query: 'anime' },
+              { name: 'Gothic Collection', image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&auto=format&fit=crop&q=80', query: 'gothic' },
+              { name: 'Minimal Collection', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80', query: 'minimal' },
+              { name: 'Oversized Essentials', image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=80', query: 'oversized' },
+              { name: 'Graphic Tees', image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=80', query: 'graphic' },
+            ].map((col, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => navigate(`/shop?category=${col.query}`)}
+                className="group relative aspect-[3/4] bg-zinc-900 rounded-xl overflow-hidden cursor-pointer border border-zinc-200 shadow-md hover:shadow-xl"
+              >
+                <img
+                  src={col.image}
+                  alt={`TeeCode ${col.name}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-street-black via-street-black/40 to-transparent p-4 flex flex-col justify-end text-left">
+                  <h3 className="font-display font-black text-sm sm:text-base text-white uppercase tracking-tight group-hover:text-street-red transition-colors">
+                    {col.name}
+                  </h3>
+                  <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest flex items-center space-x-1 pt-1">
+                    <span>EXPLORE DROP</span>
+                    <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Customer Trust Section */}
+      <section aria-label="Customer Trust" className="bg-zinc-50 py-12 border-b border-zinc-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-8 sm:p-12 shadow-sm text-center space-y-6">
+            <div className="flex justify-center items-center space-x-1 text-amber-500">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-amber-500" />
+              ))}
+            </div>
+            <h2 className="font-display text-2xl sm:text-3xl font-black uppercase tracking-tight text-street-black">
+              TRUSTED BY THOUSANDS OF STREETWEAR ENTHUSIASTS
+            </h2>
+            <p className="text-zinc-500 font-mono text-xs max-w-xl mx-auto leading-relaxed">
+              Join 10,000+ creators, gamers, and streetwear lovers who trust TeeCode for heavyweight 240 GSM street apparel.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-zinc-150 font-mono text-xs">
+              <div className="space-y-1">
+                <span className="font-bold text-street-black block uppercase text-sm">PREMIUM QUALITY</span>
+                <span className="text-zinc-500 text-[11px]">240 GSM Combed Organic Cotton</span>
+              </div>
+              <div className="space-y-1">
+                <span className="font-bold text-street-black block uppercase text-sm">EASY RETURNS</span>
+                <span className="text-zinc-500 text-[11px]">7-Day Hassle-Free Exchange</span>
+              </div>
+              <div className="space-y-1">
+                <span className="font-bold text-street-black block uppercase text-sm">SECURE PAYMENTS</span>
+                <span className="text-zinc-500 text-[11px]">Razorpay & COD Available</span>
+              </div>
+              <div className="space-y-1">
+                <span className="font-bold text-street-black block uppercase text-sm">EXPRESS DISPATCH</span>
+                <span className="text-zinc-500 text-[11px]">Shipped Within 24-48 Hours</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
