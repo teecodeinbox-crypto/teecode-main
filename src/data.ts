@@ -764,32 +764,6 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     washingInstructions: WASHING_INSTRUCTIONS
   },
   {
-    id: 'medusa-eclipse-acid-wash-oversized-tee',
-    name: 'Medusa Eclipse Acid-Wash Oversized Tee',
-    price: 1999,
-    salePrice: 899,
-    description: 'Heavyweight acid-washed oversized T-shirt featuring a bold Medusa Eclipse mythology print.',
-    fit: 'Oversized Fit',
-    fitType: 'Oversized',
-    gsm: 240,
-    material: '240 GSM Acid-Washed Cotton',
-    printFront: 'Medusa Eclipse Mythology Graphic Print',
-    printBack: 'Plain back',
-    style: 'Acid Wash Streetwear — Women\'s',
-    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
-    colors: [{ name: 'Acid Wash Grey', hex: '#333333' }],
-    images: [
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png'
-    ],
-    category: 'bestseller',
-    gender: 'women',
-    tshirtType: 'Oversized Collection',
-    additionalTypes: ['Oversized Collection'],
-    tag: 'BESTSELLER',
-    graphicDesc: 'Medusa Eclipse Graphic Print',
-    washingInstructions: WASHING_INSTRUCTIONS
-  },
-  {
     id: 'teecode-mens-casual-short-sleeve-linen-blend-button-up-shirt',
     name: 'Men\'s Solid Color Casual Shirt, Fashionable Short Sleeve Shacket, Mint Green, Hawaiian Resort Beach Shirt',
     price: 1999,
@@ -1660,9 +1634,6 @@ const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
   ],
   'vintage-eagle-graphic-crop-t-shirt': [
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/b2ee10d8a3faacdceae78dc91308ee60_1_upkdhs.jpg'
-  ],
-  'medusa-eclipse-acid-wash-oversized-tee': [
-    'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png'
   ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',
