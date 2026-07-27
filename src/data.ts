@@ -1748,6 +1748,12 @@ PRODUCTS.push(...NEW_PRODUCTS_TO_ADD);
 
 // Real product image mapping
 const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
+  'teecode-womens-los-angeles-95-oversized-graphic-tshirt': [
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175561/111_cryka7.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175563/1_iouedo.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175568/11_wjydhw.png',
+  ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',
     '/products/nocturnis/nocturnis-10.png',
@@ -1783,6 +1789,8 @@ PRODUCTS.forEach(p => {
     // Product has per-color-variant images, don't override
   } else if (REAL_PRODUCT_IMAGES[p.id]) {
     p.images = REAL_PRODUCT_IMAGES[p.id];
+  } else if (p.images && p.images.length > 0 && !p.images[0].startsWith('data:image/svg+xml')) {
+    // Preserve specified real images without SVG fallbacks
   } else {
     // SVG fallback for products without real photos
     let modelPhoto = '';
