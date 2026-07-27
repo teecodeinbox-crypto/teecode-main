@@ -340,7 +340,7 @@ export default function HomeView() {
 
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
             {[
-              { name: 'Women Oversized', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg', path: '/shop?gender=women&category=women-tshirts' },
+              { name: 'Women TEES', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg', path: '/women/t-shirts' },
               { name: 'Anime Collection', image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80', path: '/shop?category=anime' },
               { name: 'Gothic Collection', image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&auto=format&fit=crop&q=80', path: '/shop?category=gothic' },
               { name: 'Minimal Collection', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80', path: '/shop?category=minimal' },
