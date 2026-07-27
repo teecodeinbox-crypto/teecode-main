@@ -732,6 +732,7 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     category: 'new',
     gender: 'women',
     tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection', 'Graphic Universe', 'Anime Code', 'Washed Edition', 'Essential Solids'],
     tag: 'NEW ARRIVAL',
     graphicDesc: 'Distressed burgundy LOS ANGELES 95 front print',
     washingInstructions: [

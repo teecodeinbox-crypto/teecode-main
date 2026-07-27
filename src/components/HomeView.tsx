@@ -338,32 +338,33 @@ export default function HomeView() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
             {[
-              { name: 'Anime Collection', image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80', query: 'anime' },
-              { name: 'Gothic Collection', image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&auto=format&fit=crop&q=80', query: 'gothic' },
-              { name: 'Minimal Collection', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80', query: 'minimal' },
-              { name: 'Oversized Essentials', image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=80', query: 'oversized' },
-              { name: 'Graphic Tees', image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=80', query: 'graphic' },
+              { name: 'Women Oversized', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg', path: '/shop?gender=women&category=women-tshirts' },
+              { name: 'Anime Collection', image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80', path: '/shop?category=anime' },
+              { name: 'Gothic Collection', image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&auto=format&fit=crop&q=80', path: '/shop?category=gothic' },
+              { name: 'Minimal Collection', image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80', path: '/shop?category=minimal' },
+              { name: 'Oversized Essentials', image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=80', path: '/shop?category=oversized' },
+              { name: 'Graphic Tees', image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=80', path: '/shop?category=graphic' },
             ].map((col, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
-                onClick={() => navigate(`/shop?category=${col.query}`)}
+                onClick={() => navigate(col.path)}
                 className="group relative aspect-[3/4] bg-zinc-900 rounded-xl overflow-hidden cursor-pointer border border-zinc-200 shadow-md hover:shadow-xl"
               >
                 <img
                   src={col.image}
                   alt={`TeeCode ${col.name}`}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-85 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-street-black via-street-black/40 to-transparent p-4 flex flex-col justify-end text-left">
-                  <h3 className="font-display font-black text-sm sm:text-base text-white uppercase tracking-tight group-hover:text-street-red transition-colors">
+                  <h3 className="font-display font-black text-xs sm:text-sm text-white uppercase tracking-tight group-hover:text-street-red transition-colors">
                     {col.name}
                   </h3>
-                  <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest flex items-center space-x-1 pt-1">
+                  <span className="font-mono text-[9px] text-zinc-400 uppercase tracking-widest flex items-center space-x-1 pt-1">
                     <span>EXPLORE DROP</span>
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </span>
