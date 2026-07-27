@@ -679,7 +679,7 @@ export const NAV_CATEGORIES = [
     id: 'women',
     name: 'WOMEN',
     subcategories: [
-      { id: 'women-tshirts', name: 'T-Shirts', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg', collections: ['Oversized Collection'] },
+      { id: 'women-tshirts', name: 'T-Shirts', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/b2ee10d8a3faacdceae78dc91308ee60_1_upkdhs.jpg', collections: ['Oversized Collection'] },
       { id: 'women-hoodies', name: 'Hoodies', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png', collections: ['Hoodies'] },
       { id: 'women-joggers', name: 'Bottoms', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/BOT_ekpnyw.jpg', collections: [] as string[], comingSoon: true },
       { id: 'women-gym-gear', name: 'TeeCode Gym Gear', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/GYM_yhkwnt.jpg', collections: [] as string[], comingSoon: true },
@@ -706,44 +706,6 @@ export const getCollectionFilterValue = (displayName: string): string => {
 
 
 const NEW_PRODUCTS_TO_ADD: Product[] = [
-  {
-    id: 'teecode-womens-los-angeles-95-oversized-graphic-tshirt',
-    name: 'TEECODE Los Angeles 95 Oversized T-Shirt',
-    price: 1999,
-    salePrice: 799,
-    description: 'Bring effortless varsity style to your everyday wardrobe with the TEECODE Los Angeles 95 Oversized T-Shirt. Designed in a soft off-white shade, this statement tee features a distressed burgundy "LOS ANGELES 95" graphic for a vintage collegiate look. Its relaxed silhouette, dropped shoulders, and loose sleeves create an easy oversized fit that works perfectly with wide-leg trousers, denim, cargos, shorts, or skirts.',
-    fit: 'Oversized and relaxed fit with dropped shoulders and loose short sleeves',
-    fitType: 'Oversized',
-    gsm: 240,
-    material: '240 GSM Premium 100% Combed Organic Cotton',
-    printFront: 'Distressed burgundy "LOS ANGELES 95" varsity front print',
-    printBack: 'Plain back',
-    style: 'Vintage Varsity / Streetwear / Casual — Women\'s',
-    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
-    colors: [
-      { name: 'Off-White', hex: '#F5F5DC' },
-    ],
-    images: [
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg',
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175561/111_cryka7.png',
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175563/1_iouedo.png',
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175568/11_wjydhw.png',
-    ],
-    category: 'new',
-    gender: 'women',
-    tshirtType: 'Oversized Collection',
-    tag: 'NEW ARRIVAL',
-    graphicDesc: 'Distressed burgundy LOS ANGELES 95 front print',
-    washingInstructions: [
-      'Machine wash cold with similar colours',
-      'Wash inside out to protect the print',
-      'Use mild detergent',
-      'Do not bleach',
-      'Do not iron directly over the graphic',
-      'Dry in shade',
-      'Avoid tumble drying for longer print life',
-    ]
-  },
   {
     id: 'teecode-mens-casual-short-sleeve-linen-blend-button-up-shirt',
     name: 'Men\'s Solid Color Casual Shirt, Fashionable Short Sleeve Shacket, Mint Green, Hawaiian Resort Beach Shirt',
@@ -1748,12 +1710,6 @@ PRODUCTS.push(...NEW_PRODUCTS_TO_ADD);
 
 // Real product image mapping
 const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
-  'teecode-womens-los-angeles-95-oversized-graphic-tshirt': [
-    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg',
-    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175561/111_cryka7.png',
-    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175563/1_iouedo.png',
-    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175568/11_wjydhw.png',
-  ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',
     '/products/nocturnis/nocturnis-10.png',
