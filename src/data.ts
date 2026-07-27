@@ -1158,51 +1158,6 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
       'Use mild detergent',
     ]
   },
-  {
-    id: 'medusa-eclipse-acid-wash-oversized-tee',
-    name: 'Medusa Eclipse Acid-Wash Oversized Tee',
-    price: 3999,
-    salePrice: 1999,
-    description: 'The Medusa Eclipse Acid-Wash Oversized Tee brings dark mythology into premium streetwear. Featuring a bold Medusa and serpent-inspired front graphic, this oversized tee delivers a powerful gothic look with a modern acid-wash finish. The premium black acid-wash texture gives every piece a unique vintage appearance, while the relaxed oversized silhouette offers effortless comfort and a modern unisex fit. Pair it with cargo pants, denim, shorts, sneakers, or layered streetwear for a standout everyday outfit. Oversized and relaxed. Choose your usual size for a loose fit or size down for a more regular silhouette.',
-    fit: 'Oversized Fit',
-    fitType: 'Oversized',
-    gsm: 240,
-    material: '100% Cotton, 240 GSM premium heavyweight fabric',
-    printFront: 'Detailed Medusa and serpent front graphic with acid-wash finish',
-    printBack: 'Plain back with no print',
-    style: 'Gothic Streetwear / Dark Mythology — Unisex',
-    sizes: SIZES,
-    colors: [
-      { name: 'Acid-Wash Black', hex: '#1A1A1A' },
-    ],
-    images: [
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703033/1089b93d-3a2a-4ddf-85db-a2316ce4fc0a_vca1k0.png',
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703035/259034bd-217d-461c-b8b5-2d85a7ebf22f_xecrxg.png',
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703034/7e3f0f1d-a756-4f2e-ab1c-9afec1fdca47_gavyka.png',
-      'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703034/7e3f0f1d-a756-4f2e-ab1c-9afec1fdca47_gavyka.png',
-    ],
-    colorImages: {
-      'Acid-Wash Black': [
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703033/1089b93d-3a2a-4ddf-85db-a2316ce4fc0a_vca1k0.png',
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703035/259034bd-217d-461c-b8b5-2d85a7ebf22f_xecrxg.png',
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703034/7e3f0f1d-a756-4f2e-ab1c-9afec1fdca47_gavyka.png',
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1783703034/7e3f0f1d-a756-4f2e-ab1c-9afec1fdca47_gavyka.png',
-      ],
-    },
-    category: 'new',
-    gender: 'women',
-    tshirtType: 'Graphic Universe',
-    additionalTypes: ['Oversized Collection'],
-    tag: '50% OFF',
-    graphicDesc: 'Unleash a bold gothic streetwear look with a striking monochrome Medusa-inspired graphic with detailed serpents and dark mythological elements.',
-    washingInstructions: [
-      'Wash inside out with similar colours',
-      'Use cold water and mild detergent',
-      'Do not bleach',
-      'Avoid ironing directly over the print',
-      'Dry in shade to preserve the acid-wash texture and artwork',
-    ]
-  },
   // ── Anime Collection (New Drop) ──────────────────────────────────────
   {
     id: 'shadow-strike-anime-oversized-tee',
