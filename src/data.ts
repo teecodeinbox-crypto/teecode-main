@@ -844,6 +844,69 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     ]
   },
   {
+    id: 'teecode-essential-ribbed-tank-top',
+    name: 'TEECODE Essential Ribbed Tank Top',
+    price: 999,
+    salePrice: 499,
+    description: 'Refresh your everyday wardrobe with the TEECODE Essential Ribbed Tank Top, designed for effortless everyday style and all-day comfort.\n\nCrafted from premium stretch ribbed fabric, this sleeveless tank top offers a flattering slim fit while remaining soft, breathable, and lightweight. Whether paired with jeans, cargos, skirts, shorts, or layered under jackets, it\'s a versatile wardrobe essential for every season.\n\nThe timeless minimalist design makes it perfect for casual outings, travel, college, workouts, or everyday wear.',
+    fit: 'Slim Fit',
+    fitType: 'Slim',
+    gsm: 220,
+    material: 'Premium Ribbed Stretch Fabric, Soft & Breathable',
+    printFront: 'Solid Ribbed Texture',
+    printBack: 'Clean Ribbed Back',
+    style: 'Basics / Ribbed Tank Top — Women\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L'],
+    colors: [
+      { name: 'Mocha Brown', hex: '#6E473B' },
+      { name: 'Beige', hex: '#E8D8C8' },
+      { name: 'White', hex: '#FFFFFF' },
+      { name: 'Light Pink', hex: '#FFD1DC' },
+    ],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188289/tank_top_1_umm9re.jpg',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188283/back_view_fashion_shoot_sknasl.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188286/mocha_ribbed_fabric_macro_dn5jjb.webp',
+    ],
+    colorImages: {
+      'Mocha Brown': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188289/tank_top_1_umm9re.jpg',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188283/back_view_fashion_shoot_sknasl.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188286/mocha_ribbed_fabric_macro_dn5jjb.webp',
+      ],
+      'Beige': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188288/tank_top_2_d9zfud.jpg',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188283/back_view_fashion_kmtljw.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188284/beige_ribbed_fabric_macro_fpt2ff.webp',
+      ],
+      'White': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188290/tank_top_3_hkqdqx.jpg',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188291/woman_back_view_mnouk3.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188290/white_ribbed_fabric_macro_ewpdvp.webp',
+      ],
+      'Light Pink': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188289/tank_top_4_l2fz5y.jpg',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188282/back_view_fashion_shoot_1_s0j7dy.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188287/pink_ribbed_fabric_macro_mbh197.webp',
+      ],
+    },
+    category: 'new',
+    gender: 'women',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection', 'Graphic Universe'],
+    tag: '50% OFF',
+    graphicDesc: 'TEECODE Essential Ribbed Tank Top for Women in Mocha Brown, Beige, White, and Light Pink.',
+    washingInstructions: [
+      'Machine Wash Cold',
+      'Wash with Similar Colours',
+      'Wash Inside Out',
+      'Do Not Bleach',
+      'Do Not Iron Directly on Garment',
+      'Dry in Shade',
+      'Do Not Tumble Dry'
+    ]
+  },
+  {
     id: 'teecode-mens-casual-short-sleeve-linen-blend-button-up-shirt',
     name: 'Men\'s Solid Color Casual Shirt, Fashionable Short Sleeve Shacket, Mint Green, Hawaiian Resort Beach Shirt',
     price: 1999,
@@ -1726,6 +1789,11 @@ const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184513/2_zf8hvb.png',
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184506/3_seek9c.png',
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184506/4_wpbmg7.png',
+  ],
+  'teecode-essential-ribbed-tank-top': [
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188289/tank_top_1_umm9re.jpg',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188283/back_view_fashion_shoot_sknasl.webp',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785188286/mocha_ribbed_fabric_macro_dn5jjb.webp',
   ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',
