@@ -790,58 +790,6 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     washingInstructions: WASHING_INSTRUCTIONS
   },
   {
-    id: 'original-typography-graphic-t-shirt',
-    name: 'Original Typography Graphic T-Shirt',
-    price: 1699,
-    salePrice: 699,
-    description: 'Minimalist statement tee with high-density raw typography print.',
-    fit: 'Regular Fit',
-    fitType: 'Regular',
-    gsm: 240,
-    material: '240 GSM Combed Cotton',
-    printFront: 'TeeCode Original Raw Typography',
-    printBack: 'Plain back',
-    style: 'Minimal Streetwear — Women\'s',
-    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
-    colors: [{ name: 'White', hex: '#FFFFFF' }],
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80'
-    ],
-    category: 'new',
-    gender: 'women',
-    tshirtType: 'Oversized Collection',
-    additionalTypes: ['Oversized Collection'],
-    tag: 'MINIMAL',
-    graphicDesc: 'Raw Typography Print',
-    washingInstructions: WASHING_INSTRUCTIONS
-  },
-  {
-    id: 'teecode-vintage-drive-oversized-off-shoulder-graphic-tee',
-    name: 'TeeCode Vintage Drive Oversized Off-Shoulder Graphic Tee',
-    price: 1999,
-    salePrice: 849,
-    description: 'Relaxed off-shoulder streetwear tee featuring a retro vintage drive automotive graphic.',
-    fit: 'Oversized Off-Shoulder Fit',
-    fitType: 'Oversized',
-    gsm: 240,
-    material: '240 GSM Organic Cotton',
-    printFront: 'Vintage Drive Graphic Print',
-    printBack: 'Plain back',
-    style: 'Vintage Automotive — Women\'s',
-    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
-    colors: [{ name: 'Vintage Black', hex: '#1C1C1C' }],
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=80'
-    ],
-    category: 'featured',
-    gender: 'women',
-    tshirtType: 'Oversized Collection',
-    additionalTypes: ['Oversized Collection'],
-    tag: 'LIMITED DROP',
-    graphicDesc: 'Vintage Drive Automotive Graphic Print',
-    washingInstructions: WASHING_INSTRUCTIONS
-  },
-  {
     id: 'teecode-mens-casual-short-sleeve-linen-blend-button-up-shirt',
     name: 'Men\'s Solid Color Casual Shirt, Fashionable Short Sleeve Shacket, Mint Green, Hawaiian Resort Beach Shirt',
     price: 1999,
@@ -1862,12 +1810,6 @@ const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
   ],
   'medusa-eclipse-acid-wash-oversized-tee': [
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png'
-  ],
-  'original-typography-graphic-t-shirt': [
-    'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80'
-  ],
-  'teecode-vintage-drive-oversized-off-shoulder-graphic-tee': [
-    'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=80'
   ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',
