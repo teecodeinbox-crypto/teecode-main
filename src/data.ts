@@ -764,6 +764,46 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     washingInstructions: WASHING_INSTRUCTIONS
   },
   {
+    id: 'teecode-free-bird-1975-oversized-graphic-t-shirt',
+    name: 'TEECODE Free Bird 1975 Oversized Graphic T-Shirt',
+    price: 1499,
+    salePrice: 799,
+    description: 'Embrace effortless streetwear with the TEECODE Free Bird 1975 Oversized Graphic T-Shirt. Featuring a bold vintage-inspired eagle graphic with "FREE BIRD 1975" typography, this oversized tee combines retro aesthetics with modern comfort.\n\nCrafted from premium 240 GSM 100% combed cotton, it offers exceptional softness, breathability, and durability. The relaxed silhouette, dropped shoulders, and oversized fit make it perfect for everyday wear, travel, college, and casual streetwear styling.\n\nPair it with denim, cargo pants, joggers, shorts, or skirts for a timeless oversized look.',
+    fit: 'Oversized Fit with dropped shoulders and relaxed silhouette',
+    fitType: 'Oversized',
+    gsm: 240,
+    material: '240 GSM Heavyweight 100% Combed Cotton, Bio-Washed',
+    printFront: 'Vintage-inspired FREE BIRD 1975 eagle artwork',
+    printBack: 'Plain back',
+    style: 'Vintage Eagle / Streetwear / Casual — Women\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Light Grey', hex: '#D3D3D3' }
+    ],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183293/1_tpu4xe.png',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183294/4_s2ve2j.png',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183312/3_uhedd2.png',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183292/2_ltcr7z.jpg',
+    ],
+    category: 'new',
+    gender: 'women',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection', 'Graphic Universe'],
+    tag: 'NEW ARRIVAL',
+    graphicDesc: 'Woman wearing the TEECODE Free Bird 1975 oversized graphic T-shirt with vintage eagle print in light grey.',
+    washingInstructions: [
+      'Machine wash cold',
+      'Wash inside out',
+      'Wash with similar colours',
+      'Use mild detergent',
+      'Do not bleach',
+      'Do not iron directly on the print',
+      'Dry in shade',
+      'Do not tumble dry'
+    ]
+  },
+  {
     id: 'teecode-mens-casual-short-sleeve-linen-blend-button-up-shirt',
     name: 'Men\'s Solid Color Casual Shirt, Fashionable Short Sleeve Shacket, Mint Green, Hawaiian Resort Beach Shirt',
     price: 1999,
@@ -1634,6 +1674,12 @@ const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
   ],
   'vintage-eagle-graphic-crop-t-shirt': [
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/b2ee10d8a3faacdceae78dc91308ee60_1_upkdhs.jpg'
+  ],
+  'teecode-free-bird-1975-oversized-graphic-t-shirt': [
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183293/1_tpu4xe.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183294/4_s2ve2j.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183312/3_uhedd2.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183292/2_ltcr7z.jpg',
   ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',
