@@ -679,7 +679,7 @@ export const NAV_CATEGORIES = [
     id: 'women',
     name: 'WOMEN',
     subcategories: [
-      { id: 'women-tshirts', name: 'T-Shirts', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/b2ee10d8a3faacdceae78dc91308ee60_1_upkdhs.jpg', collections: ['Oversized Collection'] },
+      { id: 'women-tshirts', name: 'T-Shirts', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg', collections: ['Oversized Collection'] },
       { id: 'women-hoodies', name: 'Hoodies', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png', collections: ['Hoodies'] },
       { id: 'women-joggers', name: 'Bottoms', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/BOT_ekpnyw.jpg', collections: [] as string[], comingSoon: true },
       { id: 'women-gym-gear', name: 'TeeCode Gym Gear', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/GYM_yhkwnt.jpg', collections: [] as string[], comingSoon: true },
