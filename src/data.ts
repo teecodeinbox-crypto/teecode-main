@@ -707,7 +707,7 @@ export const getCollectionFilterValue = (displayName: string): string => {
 
 const NEW_PRODUCTS_TO_ADD: Product[] = [
   {
-    id: 'teecode-womens-los-angeles-95-oversized-graphic-tshirt',
+    id: 'teecode-los-angeles-95-oversized-t-shirt',
     name: 'TEECODE Los Angeles 95 Oversized T-Shirt',
     price: 1999,
     salePrice: 799,
@@ -732,18 +732,114 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     category: 'new',
     gender: 'women',
     tshirtType: 'Oversized Collection',
-    additionalTypes: ['Oversized Collection', 'Graphic Universe', 'Anime Code', 'Washed Edition', 'Essential Solids'],
+    additionalTypes: ['Oversized Collection', 'Graphic Universe'],
     tag: 'NEW ARRIVAL',
     graphicDesc: 'Distressed burgundy LOS ANGELES 95 front print',
-    washingInstructions: [
-      'Machine wash cold with similar colours',
-      'Wash inside out to protect the print',
-      'Use mild detergent',
-      'Do not bleach',
-      'Do not iron directly over the graphic',
-      'Dry in shade',
-      'Avoid tumble drying for longer print life',
-    ]
+    washingInstructions: WASHING_INSTRUCTIONS
+  },
+  {
+    id: 'vintage-eagle-graphic-crop-t-shirt',
+    name: 'Vintage Eagle Graphic Crop T-Shirt',
+    price: 1799,
+    salePrice: 799,
+    description: 'A vintage-inspired distressed eagle graphic crop tee crafted for effortless urban styling. Wide boxy body with a raw edge aesthetic.',
+    fit: 'Crop Fit',
+    fitType: 'Crop',
+    gsm: 240,
+    material: '240 GSM Premium Cotton',
+    printFront: 'Vintage Eagle Graphic Print',
+    printBack: 'Plain back',
+    style: 'Vintage Streetwear — Women\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [{ name: 'Black', hex: '#111111' }, { name: 'Washed Grey', hex: '#444444' }],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/b2ee10d8a3faacdceae78dc91308ee60_1_upkdhs.jpg'
+    ],
+    category: 'featured',
+    gender: 'women',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection'],
+    tag: 'POPULAR',
+    graphicDesc: 'Vintage Eagle Graphic Print',
+    washingInstructions: WASHING_INSTRUCTIONS
+  },
+  {
+    id: 'medusa-eclipse-acid-wash-oversized-tee',
+    name: 'Medusa Eclipse Acid-Wash Oversized Tee',
+    price: 1999,
+    salePrice: 899,
+    description: 'Heavyweight acid-washed oversized T-shirt featuring a bold Medusa Eclipse mythology print.',
+    fit: 'Oversized Fit',
+    fitType: 'Oversized',
+    gsm: 240,
+    material: '240 GSM Acid-Washed Cotton',
+    printFront: 'Medusa Eclipse Mythology Graphic Print',
+    printBack: 'Plain back',
+    style: 'Acid Wash Streetwear — Women\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [{ name: 'Acid Wash Grey', hex: '#333333' }],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png'
+    ],
+    category: 'bestseller',
+    gender: 'women',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection'],
+    tag: 'BESTSELLER',
+    graphicDesc: 'Medusa Eclipse Graphic Print',
+    washingInstructions: WASHING_INSTRUCTIONS
+  },
+  {
+    id: 'original-typography-graphic-t-shirt',
+    name: 'Original Typography Graphic T-Shirt',
+    price: 1699,
+    salePrice: 699,
+    description: 'Minimalist statement tee with high-density raw typography print.',
+    fit: 'Regular Fit',
+    fitType: 'Regular',
+    gsm: 240,
+    material: '240 GSM Combed Cotton',
+    printFront: 'TeeCode Original Raw Typography',
+    printBack: 'Plain back',
+    style: 'Minimal Streetwear — Women\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [{ name: 'White', hex: '#FFFFFF' }],
+    images: [
+      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80'
+    ],
+    category: 'new',
+    gender: 'women',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection'],
+    tag: 'MINIMAL',
+    graphicDesc: 'Raw Typography Print',
+    washingInstructions: WASHING_INSTRUCTIONS
+  },
+  {
+    id: 'teecode-vintage-drive-oversized-off-shoulder-graphic-tee',
+    name: 'TeeCode Vintage Drive Oversized Off-Shoulder Graphic Tee',
+    price: 1999,
+    salePrice: 849,
+    description: 'Relaxed off-shoulder streetwear tee featuring a retro vintage drive automotive graphic.',
+    fit: 'Oversized Off-Shoulder Fit',
+    fitType: 'Oversized',
+    gsm: 240,
+    material: '240 GSM Organic Cotton',
+    printFront: 'Vintage Drive Graphic Print',
+    printBack: 'Plain back',
+    style: 'Vintage Automotive — Women\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [{ name: 'Vintage Black', hex: '#1C1C1C' }],
+    images: [
+      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=80'
+    ],
+    category: 'featured',
+    gender: 'women',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection'],
+    tag: 'LIMITED DROP',
+    graphicDesc: 'Vintage Drive Automotive Graphic Print',
+    washingInstructions: WASHING_INSTRUCTIONS
   },
   {
     id: 'teecode-mens-casual-short-sleeve-linen-blend-button-up-shirt',
@@ -1749,11 +1845,29 @@ PRODUCTS.push(...NEW_PRODUCTS_TO_ADD);
 
 // Real product image mapping
 const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
+  'teecode-los-angeles-95-oversized-t-shirt': [
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175561/111_cryka7.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175563/1_iouedo.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175568/11_wjydhw.png',
+  ],
   'teecode-womens-los-angeles-95-oversized-graphic-tshirt': [
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg',
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175561/111_cryka7.png',
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175563/1_iouedo.png',
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175568/11_wjydhw.png',
+  ],
+  'vintage-eagle-graphic-crop-t-shirt': [
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/b2ee10d8a3faacdceae78dc91308ee60_1_upkdhs.jpg'
+  ],
+  'medusa-eclipse-acid-wash-oversized-tee': [
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png'
+  ],
+  'original-typography-graphic-t-shirt': [
+    'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80'
+  ],
+  'teecode-vintage-drive-oversized-off-shoulder-graphic-tee': [
+    'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&auto=format&fit=crop&q=80'
   ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams, Link } from 'react-router-dom';
+import { useNavigate, useSearchParams, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { SlidersHorizontal, Search, RefreshCw, Grid, Star, Eye, MessageCircle, AlertTriangle, Clock, Sparkles, ArrowLeft, ChevronRight } from 'lucide-react';
 import { PRODUCTS, SIZES, TSHIRT_TYPES, NAV_CATEGORIES, getCollectionFilterValue } from '../data';
@@ -7,12 +7,14 @@ import { Product } from '../types';
 
 export default function ShopView() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchParams] = useSearchParams();
+  const isWomenTshirtsRoute = location.pathname === '/women/t-shirts';
   const queryFromUrl = searchParams.get('q') || '';
   const typeFromUrl = searchParams.get('type') || null;
-  const genderFromUrl = searchParams.get('gender') || null;
+  const genderFromUrl = isWomenTshirtsRoute ? 'women' : (searchParams.get('gender') || null);
   const comingSoon = searchParams.get('coming-soon') === 'true';
-  const categoryFromUrl = searchParams.get('category') || null;
+  const categoryFromUrl = isWomenTshirtsRoute ? 'women-tshirts' : (searchParams.get('category') || null);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(PRODUCTS);
   const [localSearch, setLocalSearch] = useState(queryFromUrl);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);

@@ -83,6 +83,9 @@ export default function Header() {
 
   // Build subcategory link
   const getSubcatLink = (gender: string, subcat: { id: string; comingSoon?: boolean }) => {
+    if (gender === 'women' && subcat.id === 'women-tshirts') {
+      return '/women/t-shirts';
+    }
     if (subcat.comingSoon) {
       return `/shop?gender=${gender}&category=${subcat.id}&coming-soon=true`;
     }

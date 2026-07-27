@@ -59,6 +59,7 @@ function AppLayout() {
             <Routes location={location}>
               <Route path="/" element={<HomeView />} />
               <Route path="/shop" element={<ShopView />} />
+              <Route path="/women/t-shirts" element={<ShopView />} />
               <Route path="/shop/:productId" element={<ProductDetailsView />} />
               <Route path="/cart" element={<CartView />} />
               <Route path="/checkout" element={<CheckoutView />} />
