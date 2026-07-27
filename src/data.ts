@@ -804,6 +804,46 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     ]
   },
   {
+    id: 'teecode-genesis-reach-acid-wash-oversized-t-shirt',
+    name: 'TEECODE Genesis Reach Acid Wash Oversized T-Shirt',
+    price: 3999,
+    salePrice: 1999,
+    description: 'Elevate your streetwear aesthetic with the TEECODE Genesis Reach Acid Wash Oversized T-Shirt. Featuring a captivating renaissance-inspired graphic with bold typography, this heavyweight oversized tee combines dark mythology with modern acid-wash textures.\n\nCrafted from premium 240 GSM 100% combed cotton, it features a relaxed dropped-shoulder silhouette for maximum everyday comfort. Pair it with cargo pants, denim, or shorts for a bold streetwear look.',
+    fit: 'Oversized Fit with dropped shoulders',
+    fitType: 'Oversized',
+    gsm: 240,
+    material: '240 GSM Heavyweight 100% Combed Cotton, Acid-Washed',
+    printFront: 'Renaissance Genesis Reach artwork with acid-wash finish',
+    printBack: 'Plain back',
+    style: 'Acid Wash Streetwear — Men\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Acid Wash Black', hex: '#1C1C1C' }
+    ],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184512/1_ymvbof.png',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184513/2_zf8hvb.png',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184506/3_seek9c.png',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184506/4_wpbmg7.png',
+    ],
+    category: 'new',
+    gender: 'men',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection', 'Graphic Universe', 'Streetwear Collection'],
+    tag: '50% OFF',
+    graphicDesc: 'Man wearing TEECODE Genesis Reach Acid Wash Oversized T-Shirt in acid wash black.',
+    washingInstructions: [
+      'Machine wash cold',
+      'Wash inside out',
+      'Wash with similar colours',
+      'Use mild detergent',
+      'Do not bleach',
+      'Do not iron directly on the print',
+      'Dry in shade',
+      'Do not tumble dry'
+    ]
+  },
+  {
     id: 'teecode-mens-casual-short-sleeve-linen-blend-button-up-shirt',
     name: 'Men\'s Solid Color Casual Shirt, Fashionable Short Sleeve Shacket, Mint Green, Hawaiian Resort Beach Shirt',
     price: 1999,
@@ -1680,6 +1720,12 @@ const REAL_PRODUCT_IMAGES: Record<string, string[]> = {
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183294/4_s2ve2j.png',
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183312/3_uhedd2.png',
     'https://res.cloudinary.com/dtzyjynai/image/upload/v1785183292/2_ltcr7z.jpg',
+  ],
+  'teecode-genesis-reach-acid-wash-oversized-t-shirt': [
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184512/1_ymvbof.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184513/2_zf8hvb.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184506/3_seek9c.png',
+    'https://res.cloudinary.com/dtzyjynai/image/upload/v1785184506/4_wpbmg7.png',
   ],
   'ryu-dragon': [
     '/products/nocturnis/nocturnis-4.png',
