@@ -12,8 +12,8 @@
     "build:api": "esbuild api-server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/api-server.cjs",
     "start": "node dist/server.cjs",
     "start:api": "node dist/api-server.cjs",
-    "preview": "vite preview",
-    "deploy": "npx vercel --prod --yes",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
   },
@@ -38,6 +38,7 @@
     "ws": "^8.21.1"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.47.0",
     "@types/express": "^4.17.21",
     "@types/node": "^22.14.0",
     "@types/nodemailer": "^8.0.1",
