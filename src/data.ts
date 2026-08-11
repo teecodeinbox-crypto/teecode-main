@@ -707,6 +707,72 @@ export const getCollectionFilterValue = (displayName: string): string => {
 
 const NEW_PRODUCTS_TO_ADD: Product[] = [
   {
+    id: 'teecode-retro-nostalgic-graphic-t-shirt',
+    name: 'TEECODE Retro Nostalgic Graphic T-Shirt',
+    price: 999,
+    salePrice: 499,
+    description: 'A vintage-inspired graphic T-shirt featuring a bold retro music design, classic typography, and a nostalgic boombox illustration. Designed for effortless everyday streetwear with a relaxed, comfortable fit.\n\nBring timeless music-inspired style to your wardrobe with the TEECODE Retro Nostalgic Graphic T-Shirt.\n\nFeaturing a striking “RETRO Nostalgic” graphic with a classic boombox illustration and vintage-inspired detailing, this statement tee adds character to casual outfits. Its relaxed silhouette makes it easy to style with jeans, cargos, shorts, or layered looks.\n\nPerfect for everyday wear, music lovers, casual outings, travel, college, and streetwear styling.',
+    fit: 'Relaxed / Oversized-inspired',
+    fitType: 'Oversized',
+    gsm: 240,
+    material: '240 GSM Premium Cotton',
+    printFront: 'RETRO Nostalgic graphic with classic boombox illustration and vintage music-themed artwork',
+    printBack: 'Plain back',
+    style: 'Casual streetwear — Women\'s',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Brown', hex: '#5C4033' },
+      { name: 'Black', hex: '#0F0F11' },
+      { name: 'Red', hex: '#DC2626' },
+      { name: 'White', hex: '#FFFFFF' },
+    ],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441758/fashion_editorial_record_store_jtxith.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441761/woman_back_view_record_store_ptkmho.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441760/retro_record_store_profile_t39ean.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441759/retro_editorial_photoshoot_wunzjd.webp',
+    ],
+    colorImages: {
+      'Brown': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441758/fashion_editorial_record_store_jtxith.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441761/woman_back_view_record_store_ptkmho.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441760/retro_record_store_profile_t39ean.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441759/retro_editorial_photoshoot_wunzjd.webp',
+      ],
+      'Black': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441760/retro_tee_record_store_btgkw4.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441759/record_store_back_view_q24f6f.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441760/retro_record_store_profile_1_j3udm5.webp',
+      ],
+      'Red': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441758/brick_red_tee_record_store_uq1unr.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441758/back_view_record_store_sdaojl.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441759/retro_profile_sunset_c5k1zq.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441759/retro_profile_sunset_c5k1zq.webp',
+      ],
+      'White': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441760/white_tshirt_retro_ypgw5q.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441758/back_view_fashion_shoot_b28cdj.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1786441762/woman_side_profile_grz8pk.webp',
+      ],
+    },
+    category: 'new',
+    gender: 'women',
+    tshirtType: 'Oversized Collection',
+    additionalTypes: ['Oversized Collection', 'Graphic Universe'],
+    tag: '50% OFF',
+    graphicDesc: 'Shop the TEECODE Retro Nostalgic Graphic T-Shirt featuring vintage music-inspired artwork and a classic boombox graphic. Available in sizes XXS to XL. Perfect for casual and streetwear styling.',
+    washingInstructions: [
+      'Machine wash cold',
+      'Wash inside out to protect the graphic',
+      'Use mild detergent',
+      'Do not bleach',
+      'Do not iron directly over the print',
+      'Dry in shade',
+      'Avoid tumble drying for longer print life',
+    ]
+  },
+  {
     id: 'teecode-los-angeles-95-oversized-t-shirt',
     name: 'TEECODE Los Angeles 95 Oversized T-Shirt',
     price: 1999,
