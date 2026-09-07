@@ -753,7 +753,7 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
       'Blue': [
         'https://res.cloudinary.com/dtzyjynai/image/upload/v1788805938/792a91dc-c0f4-43ad-8fc9-bcbb448dedac_xuatjr.png',
         'https://res.cloudinary.com/dtzyjynai/image/upload/v1788805937/1_rd2zov.webp',
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788805937/1_rd2zov.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788805937/2_u4khv9.webp',
       ],
     },
     category: 'new',
