@@ -90,7 +90,7 @@ export default function ContactView() {
                 </div>
               </a>
 
-              {/* Email Card */}
+              {/* Info Email Card */}
               <a
                 href="mailto:info@teecode.store"
                 className="flex items-start space-x-4 p-4 border border-zinc-200 hover:border-street-black hover:bg-zinc-50 transition-all block text-left"
@@ -99,9 +99,24 @@ export default function ContactView() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-display font-black text-xs text-street-black uppercase tracking-wider">EMAIL CORRESPONDENCE</h4>
+                  <h4 className="font-display font-black text-xs text-street-black uppercase tracking-wider">GENERAL ENQUIRIES</h4>
                   <p className="mt-1 font-bold text-street-black">info@teecode.store</p>
                   <p className="text-[10px] text-zinc-400 mt-1 uppercase">For business queries or bulk orders deck.</p>
+                </div>
+              </a>
+
+              {/* Support Email Card */}
+              <a
+                href="mailto:support@teecode.store"
+                className="flex items-start space-x-4 p-4 border border-zinc-200 hover:border-street-black hover:bg-zinc-50 transition-all block text-left"
+              >
+                <div className="p-3 bg-blue-50 text-blue-600 rounded-none shrink-0 border border-blue-200">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-display font-black text-xs text-street-black uppercase tracking-wider">ORDER SUPPORT</h4>
+                  <p className="mt-1 font-bold text-street-black">support@teecode.store</p>
+                  <p className="text-[10px] text-zinc-400 mt-1 uppercase">Tracking, exchanges &amp; replacement requests.</p>
                 </div>
               </a>
 

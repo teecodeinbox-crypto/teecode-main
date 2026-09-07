@@ -54,6 +54,7 @@ export default function Footer() {
             <div className="pt-2 font-mono text-xs text-zinc-500 space-y-1.5">
               <p>Domain: <span className="text-white">teecode.store</span></p>
               <p>Email: <a href="mailto:info@teecode.store" className="text-street-red hover:underline">info@teecode.store</a></p>
+              <p>Support: <a href="mailto:support@teecode.store" className="text-street-red hover:underline">support@teecode.store</a></p>
               <p>Support WhatsApp: <a href="https://wa.me/919196294654" target="_blank" rel="noreferrer" className="text-street-red hover:underline">+91 91962 94654</a></p>
             </div>
           </div>
