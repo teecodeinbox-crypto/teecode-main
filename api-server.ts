@@ -13,6 +13,7 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import nodemailer from 'nodemailer';
+import { cloudinaryRouter } from './cloudinary-routes';
 
 dotenv.config();
 
@@ -154,11 +155,24 @@ app.use(cors({
   credentials: true,
 }));
 
-app.use(express.json());
+app.use(express.json({ limit: '25mb' }));
+app.use(express.urlencoded({ extended: true, limit: '25mb' }));
+
+// =====================
+// Cloudinary API
+// =====================
+app.use('/cloudinary', cloudinaryRouter);
+app.use('/api/cloudinary', cloudinaryRouter);
 
 // =====================
 // Health Check
 // =====================
+const isCloudinaryConfigured = Boolean(
+  (process.env.CLOUDINARY_CLOUD_NAME || process.env.VITE_CLOUDINARY_CLOUD_NAME) &&
+  process.env.CLOUDINARY_API_KEY &&
+  process.env.CLOUDINARY_API_SECRET
+);
+
 app.get('/', (req, res) => {
   res.json({
     service: 'TeeCode API',
@@ -166,11 +180,17 @@ app.get('/', (req, res) => {
     timestamp: new Date().toISOString(),
     supabase: !!supabase,
     razorpay: !!razorpay,
+    cloudinary: isCloudinaryConfigured,
   });
 });
 
 app.get('/health', (req, res) => {
-  res.json({ status: 'healthy', supabase: !!supabase, razorpay: !!razorpay });
+  res.json({
+    status: 'healthy',
+    supabase: !!supabase,
+    razorpay: !!razorpay,
+    cloudinary: isCloudinaryConfigured,
+  });
 });
 
 // =====================
@@ -434,5 +454,6 @@ app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 TeeCode API running on port ${PORT}`);
   console.log(`📦 Supabase: ${supabase ? 'CONNECTED' : 'LOCAL FALLBACK'}`);
   console.log(`💳 Razorpay: ${razorpay ? 'CONFIGURED' : 'NOT CONFIGURED'}`);
+  console.log(`☁️  Cloudinary: ${isCloudinaryConfigured ? 'CONFIGURED' : 'PARTIAL/NOT CONFIGURED'}`);
   console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
 });

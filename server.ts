@@ -6,6 +6,7 @@ import Razorpay from 'razorpay';
 import crypto from 'crypto';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
+import { cloudinaryRouter } from './cloudinary-routes';
 
 dotenv.config();
 
@@ -131,8 +132,14 @@ async function startServer() {
   const app = express();
   const PORT = Number(process.env.PORT) || 5001;
 
-  // JSON parsing middleware
-  app.use(express.json());
+  // Body parsing middleware (supports large payloads for image base64 uploads)
+  app.use(express.json({ limit: '25mb' }));
+  app.use(express.urlencoded({ extended: true, limit: '25mb' }));
+
+  // =====================
+  // Cloudinary API
+  // =====================
+  app.use('/api/cloudinary', cloudinaryRouter);
 
   // =====================
   // API: Health Check
@@ -504,6 +511,7 @@ async function startServer() {
     console.log(`📦 Supabase: ${supabase ? 'CONNECTED' : 'NOT CONFIGURED (using local file)'}`);
     console.log(`💳 Razorpay: ${razorpay ? 'CONFIGURED' : 'NOT CONFIGURED (simulated fallback)'}`);
     console.log(`📧 Mail Server: ${mailTransporter ? `CONFIGURED (${smtpHost})` : 'SIMULATED (Configure SMTP_HOST/USER/PASS in .env)'}`);
+    console.log(`☁️  Cloudinary: ${Boolean((process.env.CLOUDINARY_CLOUD_NAME || process.env.VITE_CLOUDINARY_CLOUD_NAME) && process.env.CLOUDINARY_API_KEY && process.env.CLOUDINARY_API_SECRET) ? 'CONFIGURED' : 'PARTIAL/NOT FULLY CONFIGURED (Add API key & secret in .env)'}`);
     console.log(`-----------------------------------------------------`);
   });
 }
