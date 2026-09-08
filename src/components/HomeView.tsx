@@ -83,17 +83,28 @@ export default function HomeView() {
       <section id="video-hero-section" className="relative bg-street-black overflow-hidden">
         {/* Text Above Video */}
         <div className="relative z-10 text-center pt-10 pb-6 px-4">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="font-display text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase text-white leading-tight"
+            className="max-w-4xl mx-auto space-y-2.5"
           >
-            Streetwear Tees Built for{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-street-red to-red-400">
-              Street Culture
-            </span>
-          </motion.h2>
+            <div className="inline-flex items-center space-x-2 bg-zinc-900/90 border border-zinc-800 px-3.5 py-1 text-[11px] font-mono text-street-red uppercase tracking-widest rounded-full shadow-inner backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-street-red animate-ping" />
+              <span>EST. 2026 // STREET DIVISION</span>
+            </div>
+
+            <h2 className="font-stylish text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-white leading-tight">
+              CODED FOR THE STREETS.{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-street-red via-rose-400 to-amber-300 italic font-black">
+                CUT FOR THE CULTURE.
+              </span>
+            </h2>
+
+            <p className="font-mono text-xs sm:text-sm text-zinc-400 tracking-widest uppercase pt-1">
+              Heavyweight 240 GSM streetwear built for those who define the underground.
+            </p>
+          </motion.div>
         </div>
 
         {/* Video */}

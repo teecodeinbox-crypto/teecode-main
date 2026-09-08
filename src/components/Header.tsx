@@ -516,7 +516,7 @@ export default function Header() {
                   <span className="w-2.5 h-2.5 rounded-full bg-street-red"></span>
                   <span className="tracking-widest">TEECODE.STORE</span>
                 </div>
-                <p className="text-zinc-500">Premium oversized streetwear designed for street culture.</p>
+                <p className="text-zinc-500">Coded for the streets. Cut for the culture.</p>
                 <a
                   id="drawer-whatsapp"
                   href="https://wa.me/919196294654"

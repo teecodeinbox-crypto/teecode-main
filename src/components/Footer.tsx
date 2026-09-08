@@ -53,7 +53,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
-              TeeCode — Premium oversized streetwear for bold everyday fashion. Built for the street culture, engineered with heavyweight 240 GSM cotton.
+              TeeCode — Coded for the streets, cut for the culture. Engineered with heavyweight 240 GSM cotton for the bold and the underground.
             </p>
             <div className="pt-2 font-mono text-xs text-zinc-500 space-y-1.5">
               <p>Domain: <span className="text-white">teecode.store</span></p>
