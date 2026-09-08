@@ -49,7 +49,7 @@ export default function Footer() {
               <img
                 src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
                 alt="TeeCode Logo"
-                className="h-12 w-auto object-contain brightness-0 invert"
+                className="h-14 sm:h-16 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">

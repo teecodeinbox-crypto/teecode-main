@@ -140,14 +140,14 @@ export default function Header() {
               <img
                 src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
                 alt="TeeCode Logo"
-                className="h-10 w-auto object-contain"
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation with Mega Menu */}
           <nav className="hidden lg:flex items-center space-x-6">
-            {/* MEN / WOMEN with Mega Menu Dropdowns */}
+            {/* MEN / WOMEN / ACCESSORIES with Mega Menu Dropdowns */}
             {NAV_CATEGORIES.map((cat) => (
               <div
                 key={cat.id}
@@ -158,12 +158,12 @@ export default function Header() {
                 <Link
                   id={`nav-${cat.id}`}
                   to={`/shop?gender=${cat.id}`}
-                  className={`font-display text-base font-bold tracking-wider uppercase transition-colors relative py-2 flex items-center gap-1 ${
+                  className={`font-display text-xs font-semibold tracking-widest uppercase transition-colors relative py-2 flex items-center gap-1 ${
                     location.search.includes(`gender=${cat.id}`) ? 'text-street-red' : 'text-zinc-300 hover:text-white'
                   }`}
                 >
                   {cat.name}
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${activeMegaMenu === cat.id ? 'rotate-180 text-street-red' : ''}`} />
+                  <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeMegaMenu === cat.id ? 'rotate-180 text-street-red' : ''}`} />
                   {location.search.includes(`gender=${cat.id}`) && (
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-street-red"
@@ -384,7 +384,7 @@ export default function Header() {
                   <img
                     src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
                     alt="TeeCode Logo"
-                    className="h-9 w-auto object-contain"
+                    className="h-11 sm:h-12 w-auto object-contain"
                   />
                   <button
                     id="close-menu-btn"
@@ -395,7 +395,7 @@ export default function Header() {
                   </button>
                 </div>
 
-                {/* Primary: MEN / WOMEN Accordion */}
+                {/* Primary: MEN / WOMEN / ACCESSORIES Accordion */}
                 <div className="mt-6 space-y-0">
                   {NAV_CATEGORIES.map((cat) => (
                     <div key={cat.id} className="border-b border-zinc-800">
@@ -406,10 +406,10 @@ export default function Header() {
                           setExpandedMobileCategory(expandedMobileCategory === cat.id ? null : cat.id);
                           setExpandedMobileSubcat(null);
                         }}
-                        className="w-full text-left font-display text-lg font-bold tracking-widest uppercase flex items-center justify-between py-4 text-zinc-300 hover:text-white transition-colors"
+                        className="w-full text-left font-display text-sm font-semibold tracking-widest uppercase flex items-center justify-between py-3 text-zinc-300 hover:text-white transition-colors"
                       >
                         <span>{cat.name}</span>
-                        <ChevronDown className={`h-4 w-4 text-zinc-600 transition-transform duration-200 ${expandedMobileCategory === cat.id ? 'rotate-180 text-street-red' : ''}`} />
+                        <ChevronDown className={`h-3.5 w-3.5 text-zinc-600 transition-transform duration-200 ${expandedMobileCategory === cat.id ? 'rotate-180 text-street-red' : ''}`} />
                       </button>
 
                       {/* Expanded subcategories */}

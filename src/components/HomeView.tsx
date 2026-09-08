@@ -125,7 +125,7 @@ export default function HomeView() {
           <img
             src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
             alt="TeeCode Logo"
-            className="h-16 sm:h-20 w-auto object-contain"
+            className="h-20 sm:h-28 w-auto object-contain mx-auto"
           />
         </div>
       </section>
