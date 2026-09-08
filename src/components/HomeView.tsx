@@ -87,7 +87,7 @@ export default function HomeView() {
             className="flex items-center w-max gap-8"
             animate={{ x: ['0%', '-50%'] }}
             transition={{
-              duration: 24,
+              duration: 55,
               ease: 'linear',
               repeat: Infinity,
             }}
