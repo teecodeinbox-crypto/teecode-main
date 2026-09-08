@@ -722,7 +722,6 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
     sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
     colors: [
       { name: 'White', hex: '#FFFFFF' },
-      { name: 'Red', hex: '#DC2626' },
       { name: 'Black', hex: '#0F0F11' },
     ],
     images: [
@@ -737,12 +736,6 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
         'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889204/WHITE_back_plain_ezdrrx.webp',
         'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889202/BLACK_side_lvkcyf.webp',
         'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889204/WHITE_front_b7of6x.webp',
-      ],
-      'Red': [
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889203/RED_sitting_fompo5.webp',
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889203/RED_front_frwxno.webp',
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889203/RED_side_pn8nee.webp',
-        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889203/RED_back_plain_r0pimb.webp',
       ],
       'Black': [
         'https://res.cloudinary.com/dtzyjynai/image/upload/v1788889203/BLACK_sitting_i0tqsq.webp',
