@@ -122,22 +122,11 @@ export default function HomeView() {
 
         {/* Text Below Video */}
         <div className="relative z-10 text-center py-8 px-4 space-y-2">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-display text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter uppercase text-white"
-          >
-            TEE<span className="text-street-red">CODE</span>
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="font-mono text-xs sm:text-sm text-zinc-400 tracking-[0.3em] uppercase"
-          >
-            TEECODE.STORE
-          </motion.p>
+          <img
+            src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
+            alt="TeeCode Logo"
+            className="h-16 sm:h-20 w-auto object-contain"
+          />
         </div>
       </section>
       

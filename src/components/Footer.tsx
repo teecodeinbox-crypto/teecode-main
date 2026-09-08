@@ -45,8 +45,12 @@ export default function Footer() {
           
           {/* Main Statement */}
           <div className="col-span-2 md:col-span-4 space-y-4">
-            <Link to="/" className="font-display text-3xl font-black tracking-tighter uppercase">
-              TEE<span className="text-street-red">CODE</span>
+            <Link to="/" className="inline-block">
+              <img
+                src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
+                alt="TeeCode Logo"
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
               TeeCode — Premium oversized streetwear for bold everyday fashion. Built for the street culture, engineered with heavyweight 240 GSM cotton.

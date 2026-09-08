@@ -135,14 +135,13 @@ export default function Header() {
             <Link
               id="header-logo"
               to="/"
-              className="group flex items-center space-x-1"
+              className="group flex items-center"
             >
-              <span className="font-display text-2xl font-black tracking-tighter uppercase">
-                TEE<span className="text-street-red font-extrabold group-hover:text-white transition-colors duration-200">CODE</span>
-              </span>
-              <span className="hidden sm:inline-block font-mono text-[9px] bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded border border-zinc-700 tracking-wider">
-                TEECODE.STORE
-              </span>
+              <img
+                src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
+                alt="TeeCode Logo"
+                className="h-10 w-auto object-contain"
+              />
             </Link>
           </div>
 
@@ -382,9 +381,11 @@ export default function Header() {
             >
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-zinc-800">
-                  <span className="font-display text-xl font-black tracking-tighter uppercase">
-                    TEE<span className="text-street-red">CODE</span>
-                  </span>
+                  <img
+                    src="https://res.cloudinary.com/dtzyjynai/image/upload/v1788859488/fcf17976-6557-42c6-9a1f-c6c169dc53a7_cpj7xd.png"
+                    alt="TeeCode Logo"
+                    className="h-9 w-auto object-contain"
+                  />
                   <button
                     id="close-menu-btn"
                     onClick={() => setIsMenuOpen(false)}
