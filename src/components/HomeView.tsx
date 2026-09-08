@@ -81,29 +81,32 @@ export default function HomeView() {
 
       {/* 0. Video Hero Banner */}
       <section id="video-hero-section" className="relative bg-street-black overflow-hidden">
-        {/* Text Above Video */}
-        <div className="relative z-10 text-center pt-10 pb-6 px-4">
+        {/* Infinite Loop Marquee Above Video */}
+        <div className="relative z-10 py-3 bg-zinc-950 border-b border-zinc-800 overflow-hidden select-none">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="max-w-4xl mx-auto space-y-2.5"
+            className="flex items-center w-max gap-8"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              duration: 24,
+              ease: 'linear',
+              repeat: Infinity,
+            }}
           >
-            <div className="inline-flex items-center space-x-2 bg-zinc-900/90 border border-zinc-800 px-3.5 py-1 text-[11px] font-mono text-street-red uppercase tracking-widest rounded-full shadow-inner backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-street-red animate-ping" />
-              <span>EST. 2026 // STREET DIVISION</span>
-            </div>
-
-            <h2 className="font-stylish text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-white leading-tight">
-              CODED FOR THE STREETS.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-street-red via-rose-400 to-amber-300 italic font-black">
-                CUT FOR THE CULTURE.
-              </span>
-            </h2>
-
-            <p className="font-mono text-xs sm:text-sm text-zinc-400 tracking-widest uppercase pt-1">
-              Heavyweight 240 GSM streetwear built for those who define the underground.
-            </p>
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="flex items-center gap-6 shrink-0">
+                <span className="font-stylish text-sm sm:text-base md:text-lg font-bold tracking-wider uppercase text-white flex items-center gap-2">
+                  <span>CODED FOR THE STREETS.</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-street-red via-rose-400 to-amber-300 italic font-black">
+                    CUT FOR THE CULTURE.
+                  </span>
+                </span>
+                <span className="text-street-red font-mono text-xs">✦</span>
+                <span className="font-mono text-[10px] sm:text-xs text-zinc-400 uppercase tracking-widest">
+                  240 GSM HEAVYWEIGHT
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
+              </div>
+            ))}
           </motion.div>
         </div>
 
