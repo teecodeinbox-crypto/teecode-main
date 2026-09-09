@@ -15,7 +15,8 @@ export const COLORS = [
   { name: 'Blue', hex: '#4169E1' },
   { name: 'Red', hex: '#DC2626' },
   { name: 'Yellow', hex: '#F5C518' },
-  { name: 'Light Grey', hex: '#D3D3D3' }
+  { name: 'Light Grey', hex: '#D3D3D3' },
+  { name: 'Green', hex: '#224229' }
 ];
 
 export const SIZES = ['S', 'M', 'L', 'XL', 'XXL'];
@@ -706,6 +707,64 @@ export const getCollectionFilterValue = (displayName: string): string => {
 
 
 const NEW_PRODUCTS_TO_ADD: Product[] = [
+  {
+    id: 'teecode-performance-sleeveless-hoodie',
+    name: 'TEECODE Performance Sleeveless Hoodie',
+    price: 3999,
+    salePrice: 1699,
+    description: 'Push your limits with the TEECODE Performance Sleeveless Hoodie, built for those who take their training seriously.\n\nDesigned with a sleeveless construction and relaxed athletic fit, this hoodie provides freedom of movement while keeping your workout look clean and powerful. The attached hood adds a versatile streetwear element, while the deep arm openings allow comfortable movement during strength training and other high-intensity activities.\n\nIts minimalist design makes it easy to wear beyond the gym as well. Pair it with training shorts, joggers, or relaxed athletic bottoms for a complete performance-inspired look.\n\nWhether you\'re lifting, training, warming up, or simply embracing an athletic lifestyle, the TEECODE Performance Sleeveless Hoodie delivers comfort and bold gym-ready style.',
+    fit: 'Relaxed / Athletic',
+    fitType: 'Regular',
+    gsm: 260,
+    material: 'Premium breathable performance cotton blend with comfortable stretch and lightweight feel',
+    printFront: 'Minimal gym-inspired detailing with attached hood and adjustable drawstrings',
+    printBack: 'Deep arm openings with clean minimal back',
+    style: 'Gym / Activewear / Streetwear — Men\'s / Gym',
+    sizes: ['XXS', 'XS', 'S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Black', hex: '#0F0F11' },
+      { name: 'Maroon', hex: '#800020' },
+      { name: 'Green', hex: '#224229' },
+      { name: 'Brown', hex: '#5C4033' },
+    ],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951636/1_onmitx.png',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951635/11_m9ktnv.png',
+    ],
+    colorImages: {
+      'Black': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951636/1_onmitx.png',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951635/11_m9ktnv.png',
+      ],
+      'Maroon': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951611/maroon_hooded_vest_zbe7ap.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951611/maroon_hooded_vest_gym_mrvbse.webp',
+      ],
+      'Green': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951611/dark_green_hooded_vest_1_pvb64j.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951611/dark_green_hooded_vest_s24les.webp',
+      ],
+      'Brown': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951609/brown_hooded_gym_vest_gmdeux.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1788951610/dark_chocolate_hooded_vest_bkzw37.webp',
+      ],
+    },
+    category: 'new',
+    gender: 'men',
+    tshirtType: 'TeeCode Training Gear',
+    additionalTypes: ['TeeCode Training Gear', 'Hoodies'],
+    tag: '58% OFF',
+    graphicDesc: 'A modern sleeveless hoodie designed for intense workouts and everyday activewear. Featuring a relaxed athletic silhouette, attached hood, deep arm openings, and a minimal gym-inspired design for unrestricted movement and effortless style.',
+    washingInstructions: [
+      'Machine wash cold',
+      'Wash inside out',
+      'Use mild detergent',
+      'Do not bleach',
+      'Do not iron directly over printed details',
+      'Dry in shade',
+      'Avoid excessive heat',
+    ],
+  },
   {
     id: 'teecode-performance-essential-athletic-t-shirt',
     name: 'TEECODE Performance Essential Athletic T-Shirt',
