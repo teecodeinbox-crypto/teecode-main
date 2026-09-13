@@ -23,6 +23,8 @@ export interface Product {
   graphicDesc: string;
   sizeChartImage?: string; // static size chart image URL
   washingInstructions: string[];
+  seoTitle?: string;
+  metaDescription?: string;
 }
 
 export interface CartItem {

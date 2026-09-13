@@ -49,6 +49,32 @@ export default function ProductDetailsView() {
     }
   }, [selectedColor]);
 
+  // Update SEO title and meta description if specified for the product
+  useEffect(() => {
+    if (product.seoTitle) {
+      const prevTitle = document.title;
+      document.title = product.seoTitle;
+      return () => {
+        document.title = prevTitle;
+      };
+    }
+  }, [product.seoTitle]);
+
+  useEffect(() => {
+    if (product.metaDescription) {
+      const meta = document.querySelector('meta[name="description"]');
+      const prevContent = meta?.getAttribute('content') || '';
+      if (meta) {
+        meta.setAttribute('content', product.metaDescription);
+      }
+      return () => {
+        if (meta && prevContent) {
+          meta.setAttribute('content', prevContent);
+        }
+      };
+    }
+  }, [product.metaDescription]);
+
   const currentPrice = product.salePrice || product.price;
   const selectedChart = SIZE_CHARTS[product.fitType || 'Oversized'];
 
