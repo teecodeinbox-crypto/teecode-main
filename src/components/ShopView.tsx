@@ -214,6 +214,7 @@ export default function ShopView() {
                     'Polos': 'from-blue-900/80',
                     'Bottoms': 'from-emerald-900/80',
                     'Hoodies': 'from-purple-900/80',
+                    'Hoodies & Sweatshirts': 'from-purple-900/80',
                     'TeeCode Gym Gear': 'from-orange-900/80',
                     'Anime Code': 'from-pink-900/80',
                   };
