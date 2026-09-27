@@ -708,6 +708,74 @@ export const getCollectionFilterValue = (displayName: string): string => {
 
 const NEW_PRODUCTS_TO_ADD: Product[] = [
   {
+    id: 'teecode-premium-370-gsm-oversized-hoodie',
+    name: 'TEECODE Premium 370 GSM Oversized Hoodie',
+    price: 2499,
+    salePrice: 1199,
+    description: 'Upgrade your everyday wardrobe with the TEECODE Premium 370 GSM Oversized Hoodie.\n\nMade with a heavyweight 370 GSM construction, this hoodie delivers a substantial feel with a relaxed oversized silhouette designed for comfortable everyday wear. The clean, versatile design makes it easy to style with cargos, denim, joggers, shorts, or layered streetwear outfits.\n\nThe roomy fit provides freedom of movement while the heavyweight construction makes it an ideal choice for cooler days and effortless layering.\n\nWhether you\'re heading out casually, travelling, meeting friends, or building a modern streetwear outfit, the TEECODE Premium 370 GSM Oversized Hoodie delivers comfort and a premium heavyweight look.',
+    fit: 'Oversized / Relaxed',
+    fitType: 'Oversized',
+    gsm: 370,
+    material: '370 GSM heavyweight premium construction, soft & durable',
+    printFront: 'Clean minimalist design with attached hood and spacious kangaroo pocket',
+    printBack: 'Plain clean back',
+    style: 'Premium Streetwear / Casual',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    colors: [
+      { name: 'Black', hex: '#0F0F11' },
+      { name: 'White', hex: '#FFFFFF' },
+      { name: 'Maroon', hex: '#800020' },
+      { name: 'Sky Blue', hex: '#87CEEB' },
+    ],
+    images: [
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515988/black_02_vbslwf.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515988/maroon_03_auxthe.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515987/black_01_iflvav.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515990/maroon_05_n6anmr.webp',
+      'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515988/black_04_kzdfc9.webp',
+    ],
+    colorImages: {
+      'Black': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515988/black_02_vbslwf.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515988/maroon_03_auxthe.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515987/black_01_iflvav.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515990/maroon_05_n6anmr.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515988/black_04_kzdfc9.webp',
+      ],
+      'White': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790516002/editorial-02-urban_v7hoev.png',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515994/editorial-05-back-view_pqrgnb.png',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790516000/editorial-01-studio_nxe42z.png',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515996/editorial-03-daylight_qsrl6y.png',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515995/editorial-04-side-view_awuonc.png',
+      ],
+      'Maroon': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515996/maroon_15_ko3xda.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790516629/827533007_1075399085468721_7244764920948961032_n_sqyobp.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515992/maroon_11_i2llav.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515993/maroon_12_pzgpub.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515995/maroon_14_xrocer.webp',
+      ],
+      'Sky Blue': [
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515996/sky-blue_07_gysrit.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515997/sky-blue_09_pog9kk.webp',
+        'https://res.cloudinary.com/dtzyjynai/image/upload/v1790515991/maroon_10_hr8q6q.webp',
+      ],
+    },
+    category: 'new',
+    gender: 'women',
+    tshirtType: 'Hoodies',
+    tag: 'NEW DROP',
+    graphicDesc: 'TEECODE Premium 370 GSM Oversized Hoodie for Women | Heavyweight Streetwear Hoodie. Shop the TEECODE Premium 370 GSM Oversized Hoodie for women, featuring heavyweight construction and a relaxed streetwear fit. Available in Black, White, Maroon, and Sky Blue in sizes XS to XL.',
+    washingInstructions: [
+      'Machine wash cold, inside out with mild detergent.',
+      'Do not bleach.',
+      'Do not iron directly over prints or graphics.',
+      'Dry in shade & avoid excessive heat.',
+      'Avoid tumble drying for longer garment life.'
+    ]
+  },
+  {
     id: 'teecode-obsess-over-progress-oversized-t-shirt',
     name: 'TEECODE Obsess Over Progress Oversized T-Shirt',
     price: 3999,
