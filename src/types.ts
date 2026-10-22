@@ -4,6 +4,7 @@ export interface Product {
   price: number; // e.g. 999
   salePrice?: number; // e.g. 799
   description: string;
+  tagline?: string;
   fit: string; // e.g. "Oversized fit"
   fitType: 'Oversized' | 'Regular' | 'Slim' | 'Crop'; // e.g. "Oversized", "Regular", "Slim", "Crop"
   gsm: number; // e.g. 240
@@ -22,9 +23,20 @@ export interface Product {
   tag?: string; // e.g., "LIMITED DROP", "BEST SELLER"
   graphicDesc: string;
   sizeChartImage?: string; // static size chart image URL
-  washingInstructions: string[];
+  washingInstructions?: string[];
   seoTitle?: string;
   metaDescription?: string;
+  productDetails?: {
+    fabric?: string;
+    fit?: string;
+    hood?: string;
+    pocket?: string;
+    sleeves?: string;
+    construction?: string;
+    feel?: string;
+    style?: string;
+    whyYoullLoveIt?: string[];
+  };
 }
 
 export interface CartItem {
