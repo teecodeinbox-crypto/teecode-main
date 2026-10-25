@@ -60,7 +60,7 @@ export const GENERAL_COLLECTION_URL =
 export const RAISED_COUNTRY_TEE_CONFIG: RaisedCountryTeeConfig = {
   id: 'raised-on-90s-country-graphic-tee',
   name: "Raised On 90's Country Graphic Tee",
-  brand: 'TeeCode Gym Gear',
+  brand: 'TeeCode Active Gear',
   collectionName: "Women's Collection",
   categoryName: "Women's T-Shirts",
   primaryCategoryUrl: PRIMARY_CATEGORY_URL,
@@ -118,7 +118,7 @@ export const RAISED_COUNTRY_TEE_CONFIG: RaisedCountryTeeConfig = {
       'The relaxed oversized silhouette creates an effortless, casual look. Wear it loose for a laid-back streetwear style or pair it with high-waisted denim, shorts or a skirt for a more defined silhouette.',
   },
   specifications: [
-    { label: 'Brand', value: 'TeeCode Gym Gear' },
+    { label: 'Brand', value: 'TeeCode Active Gear' },
     { label: 'Collection', value: "Women's Collection" },
     { label: 'Category', value: "Women's T-Shirts" },
     { label: 'Product Type', value: 'Graphic T-Shirt' },
@@ -192,7 +192,7 @@ export const RAISED_COUNTRY_TEE_CONFIG: RaisedCountryTeeConfig = {
     ],
   },
   seo: {
-    title: "Raised On 90's Country Graphic Tee | TeeCode Gym Gear",
+    title: "Raised On 90's Country Graphic Tee | TeeCode Active Gear",
     description:
       "Shop the TeeCode Raised On 90's Country Graphic Tee — a vintage-inspired western graphic tee with a relaxed oversized fit. Available for ₹499.",
     ogImage:

@@ -51,7 +51,7 @@ function AppLayout() {
       {/* Scroll to top on navigation */}
       <ScrollToTop />
 
-      {/* Header (Dedicated product pages include their own TeeCode Gym Gear header) */}
+      {/* Header (Dedicated product pages include their own TeeCode Active Gear header) */}
       {!isDedicatedProductPage && <Header />}
 
       {/* Main Viewport Content with transition layouts */}

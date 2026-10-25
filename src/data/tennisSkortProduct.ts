@@ -61,7 +61,7 @@ export const WOMENS_COLLECTION_CLEAN_URL =
 export const TENNIS_SKORT_CONFIG: TennisSkortProductConfig = {
   id: 'black-pleated-tennis-skort',
   name: 'Black Pleated Tennis Skort',
-  brand: 'TeeCode Gym Gear',
+  brand: 'TeeCode Active Gear',
   collectionName: "Women's Collection",
   collectionUrl: WOMENS_COLLECTION_CLEAN_URL,
   price: 699,
@@ -163,9 +163,9 @@ export const TENNIS_SKORT_CONFIG: TennisSkortProductConfig = {
     ]
   },
   seo: {
-    title: "Black Pleated Tennis Skort | TeeCode Gym Gear — Women's Collection",
+    title: "Black Pleated Tennis Skort | TeeCode Active Gear — Women's Collection",
     description:
-      'Shop the Black Pleated Tennis Skort from TeeCode Gym Gear. High-rise waistband, built-in shorts, functional side pocket, and sporty pleated style. ₹699 (53% OFF).',
+      'Shop the Black Pleated Tennis Skort from TeeCode Active Gear. High-rise waistband, built-in shorts, functional side pocket, and sporty pleated style. ₹699 (53% OFF).',
     ogImage:
       'https://res.cloudinary.com/dtzyjynai/image/upload/v1792948650/Screenshot_2026-10-25_at_22.41.10_efmzpy.png'
   }
@@ -185,7 +185,7 @@ export const TENNIS_SKORT_AS_PRODUCT: Product = {
   material: 'Premium 4-Way Stretch Active Performance Blend',
   printFront: 'Pleated silhouette with clean high-rise waistband',
   printBack: 'Streamlined athletic back profile',
-  style: "TeeCode Gym Gear — Women's Activewear",
+  style: "TeeCode Active Gear — Women's Activewear",
   sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
   colors: [
     { name: 'Black', hex: '#111111' },
@@ -200,9 +200,9 @@ export const TENNIS_SKORT_AS_PRODUCT: Product = {
   gender: 'women',
   tag: '53% OFF',
   graphicDesc: 'Black Pleated Tennis Skort with high-rise waistband and built-in shorts.',
-  seoTitle: "Black Pleated Tennis Skort | TeeCode Gym Gear — Women's Collection",
+  seoTitle: "Black Pleated Tennis Skort | TeeCode Active Gear — Women's Collection",
   metaDescription:
-    "Shop the Black Pleated Tennis Skort from TeeCode Gym Gear. High-rise waistband, built-in shorts, functional side pocket. ₹699 (53% OFF).",
+    "Shop the Black Pleated Tennis Skort from TeeCode Active Gear. High-rise waistband, built-in shorts, functional side pocket. ₹699 (53% OFF).",
   washingInstructions: TENNIS_SKORT_CONFIG.detailsAccordion.fabricAndCare,
   productDetails: {
     fabric: 'Premium 4-way stretch active fabric blend with quick-dry moisture management',

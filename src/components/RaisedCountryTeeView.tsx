@@ -260,7 +260,7 @@ export default function RaisedCountryTeeView() {
               </button>
             </div>
 
-            {/* Brand Logo: TeeCode Gym Gear */}
+            {/* Brand Logo: TeeCode Active Gear */}
             <div className="flex items-center">
               <Link
                 id="brand-logo-link"
@@ -272,7 +272,7 @@ export default function RaisedCountryTeeView() {
                     TEECODE
                   </span>
                   <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.28em] uppercase -mt-1 text-neutral-500">
-                    GYM GEAR
+                    ACTIVE GEAR
                   </span>
                 </div>
               </Link>
@@ -308,11 +308,11 @@ export default function RaisedCountryTeeView() {
               </Link>
 
               <a
-                id="nav-gym-gear"
+                id="nav-active-gear"
                 href={GENERAL_COLLECTION_URL}
                 className="text-xs font-semibold uppercase tracking-wider text-neutral-600 hover:text-neutral-950 transition-colors py-1"
               >
-                Gym Gear
+                Active Gear
               </a>
 
               <a
@@ -1030,7 +1030,7 @@ export default function RaisedCountryTeeView() {
             </h2>
 
             <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto">
-              Discover more graphic tees and everyday styles from TeeCode Gym Gear. Premium cuts,
+              Discover more graphic tees and everyday styles from TeeCode Active Gear. Premium cuts,
               vintage attitude, and effortless everyday comfort.
             </p>
 
@@ -1057,7 +1057,7 @@ export default function RaisedCountryTeeView() {
               EXPLORE WOMEN'S COLLECTION
             </h3>
             <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-              Discover more styles from TeeCode Gym Gear — engineered activewear, tennis skorts, and
+              Discover more styles from TeeCode Active Gear — engineered activewear, tennis skorts, and
               streetwear essentials.
             </p>
             <div className="pt-2">
@@ -1440,7 +1440,7 @@ export default function RaisedCountryTeeView() {
                       TEECODE
                     </span>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase -mt-1 text-neutral-500">
-                      GYM GEAR
+                      ACTIVE GEAR
                     </span>
                   </div>
                   <button
@@ -1492,7 +1492,7 @@ export default function RaisedCountryTeeView() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="block hover:text-black py-1"
                     >
-                      Gym Gear
+                      Active Gear
                     </a>
                     <a
                       href={PRIMARY_CATEGORY_URL}

@@ -223,7 +223,7 @@ export default function ShopView() {
                     'Bottoms': 'from-emerald-900/80',
                     'Hoodies': 'from-purple-900/80',
                     'Hoodies & Sweatshirts': 'from-purple-900/80',
-                    'TeeCode Gym Gear': 'from-orange-900/80',
+                    'TeeCode Active Gear': 'from-orange-900/80',
                     'Anime Code': 'from-pink-900/80',
                   };
                   const gradientFrom = subcatColors[subcat.name] || 'from-zinc-900/80';
@@ -279,7 +279,7 @@ export default function ShopView() {
           );
         })()}
 
-        {/* Women's Gym Gear Collection Showcase */}
+        {/* Women's Active Gear Collection Showcase */}
         {categoryFromUrl === 'women-gym-gear' && (() => {
           return (
             <div className="py-6 sm:py-10 space-y-10">
@@ -287,13 +287,13 @@ export default function ShopView() {
               <div className="bg-neutral-900 text-white rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-xl text-left">
                 <div className="relative z-10 max-w-xl space-y-3">
                   <span className="text-[11px] font-mono font-bold tracking-[0.25em] text-neutral-400 uppercase">
-                    WOMEN'S COLLECTION • TEECODE GYM GEAR
+                    WOMEN'S COLLECTION • TEECODE ACTIVE GEAR
                   </span>
                   <h2 className="font-display font-black text-2xl sm:text-4xl uppercase tracking-tight text-white">
                     PERFORMANCE. COMFORT. EVERYDAY MOVEMENT.
                   </h2>
                   <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed">
-                    Designed for active living. Discover the all-new Women’s Gym Gear collection, engineered with premium active fabrics, flattering high-rise silhouettes, and functional athletic detailing.
+                    Designed for active living. Discover the all-new Women’s Active Gear collection, engineered with premium active fabrics, flattering high-rise silhouettes, and functional athletic detailing.
                   </p>
                 </div>
               </div>
@@ -323,7 +323,7 @@ export default function ShopView() {
 
                   <div className="space-y-4 text-left">
                     <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-500">
-                      TeeCode Gym Gear — Women's Collection
+                      TeeCode Active Gear — Women's Collection
                     </span>
                     <h4 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-neutral-950">
                       Black Pleated Tennis Skort

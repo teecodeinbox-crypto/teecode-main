@@ -272,7 +272,7 @@ export default function WomensTennisSkortView() {
               </button>
             </div>
 
-            {/* Brand Logo: TeeCode Gym Gear */}
+            {/* Brand Logo: TeeCode Active Gear */}
             <div className="flex items-center">
               <Link
                 id="brand-logo-link"
@@ -284,7 +284,7 @@ export default function WomensTennisSkortView() {
                     TEECODE
                   </span>
                   <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.28em] uppercase -mt-1 text-neutral-500">
-                    GYM GEAR
+                    ACTIVE GEAR
                   </span>
                 </div>
               </Link>
@@ -321,11 +321,11 @@ export default function WomensTennisSkortView() {
               </Link>
 
               <a
-                id="nav-gym-gear"
+                id="nav-active-gear"
                 href={WOMENS_COLLECTION_CLEAN_URL}
                 className="text-xs font-semibold uppercase tracking-wider text-neutral-600 hover:text-neutral-950 transition-colors py-1"
               >
-                Gym Gear
+                Active Gear
               </a>
 
 
@@ -397,7 +397,7 @@ export default function WomensTennisSkortView() {
               </span>
               <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-neutral-400" />
               <span className="text-[10px] sm:text-xs font-semibold text-neutral-600 uppercase tracking-widest">
-                TeeCode Gym Gear
+                TeeCode Active Gear
               </span>
             </div>
             <p className="text-neutral-500 text-[11px] sm:text-xs tracking-wide">
@@ -439,7 +439,7 @@ export default function WomensTennisSkortView() {
             href={WOMENS_COLLECTION_CLEAN_URL}
             className="hover:text-neutral-900 transition-colors"
           >
-            Gym Gear
+            Active Gear
           </a>
           <span className="text-neutral-300">/</span>
           <span className="text-neutral-900 font-bold truncate">
@@ -1023,7 +1023,7 @@ export default function WomensTennisSkortView() {
           
           <div className="relative z-10 max-w-2xl mx-auto space-y-4">
             <span className="font-mono text-xs font-bold tracking-[0.25em] text-neutral-400 uppercase">
-              TEECODE GYM GEAR
+              TEECODE ACTIVE GEAR
             </span>
 
             <h2 className="font-display font-black text-2xl sm:text-4xl uppercase tracking-tight text-white">
@@ -1031,7 +1031,7 @@ export default function WomensTennisSkortView() {
             </h2>
 
             <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed max-w-lg mx-auto">
-              Discover more from TeeCode Gym Gear Women's Collection. Engineered activewear designed for movement, shape, and all-day endurance.
+              Discover more from TeeCode Active Gear Women's Collection. Engineered activewear designed for movement, shape, and all-day endurance.
             </p>
 
             <div className="pt-3">
@@ -1308,7 +1308,7 @@ export default function WomensTennisSkortView() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     'Tennis Skort',
-                    "Women's Gym Gear",
+                    "Women's Active Gear",
                     'Activewear',
                     'Oversized Tees'
                   ].map((term) => (
@@ -1413,7 +1413,7 @@ export default function WomensTennisSkortView() {
                       TEECODE
                     </span>
                     <span className="text-[9px] font-bold tracking-[0.25em] uppercase -mt-1 text-neutral-500">
-                      GYM GEAR
+                      ACTIVE GEAR
                     </span>
                   </div>
                   <button
@@ -1459,7 +1459,7 @@ export default function WomensTennisSkortView() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="block hover:text-black py-1"
                     >
-                      Gym Gear
+                      Active Gear
                     </a>
                     <Link
                       to="/shop?sort=sale"
@@ -1479,7 +1479,7 @@ export default function WomensTennisSkortView() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full bg-neutral-900 text-white text-center py-3 rounded-lg font-display font-black text-xs uppercase tracking-widest"
                 >
-                  SHOP WOMEN'S GYM GEAR
+                  SHOP WOMEN'S ACTIVE GEAR
                 </a>
                 <div className="flex justify-around text-xs font-mono text-neutral-500 pt-2">
                   <Link to="/track-order" onClick={() => setIsMobileMenuOpen(false)}>
