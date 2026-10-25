@@ -196,7 +196,7 @@ export const TENNIS_SKORT_AS_PRODUCT: Product = {
   colorImages: TENNIS_SKORT_CONFIG.imagesByColor,
   category: 'featured',
   tshirtType: 'TeeCode Training Gear',
-  additionalTypes: ['TeeCode Training Gear', 'Tennis & Active', 'Bottoms'],
+  additionalTypes: ['TeeCode Training Gear', 'Bottoms'],
   gender: 'women',
   tag: '53% OFF',
   graphicDesc: 'Black Pleated Tennis Skort with high-rise waistband and built-in shorts.',

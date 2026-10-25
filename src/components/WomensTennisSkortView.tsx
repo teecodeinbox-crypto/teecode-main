@@ -328,13 +328,6 @@ export default function WomensTennisSkortView() {
                 Gym Gear
               </a>
 
-              <Link
-                id="nav-tennis-active"
-                to="/shop/black-pleated-tennis-skort"
-                className="text-xs font-semibold uppercase tracking-wider text-neutral-600 hover:text-neutral-950 transition-colors py-1"
-              >
-                Tennis & Active
-              </Link>
 
               <Link
                 id="nav-sale"
@@ -1468,13 +1461,6 @@ export default function WomensTennisSkortView() {
                     >
                       Gym Gear
                     </a>
-                    <Link
-                      to="/shop/black-pleated-tennis-skort"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block hover:text-black py-1 text-neutral-950 font-bold"
-                    >
-                      Tennis & Active
-                    </Link>
                     <Link
                       to="/shop?sort=sale"
                       onClick={() => setIsMobileMenuOpen(false)}

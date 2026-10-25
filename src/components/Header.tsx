@@ -43,9 +43,7 @@ export default function Header() {
   };
 
   // Main desktop nav tabs
-  const mainNavItems = [
-    { id: 'tennis-active', path: '/shop/black-pleated-tennis-skort', label: 'Tennis & Active' },
-  ];
+  const mainNavItems: {id: string, path: string, label: string}[] = [];
 
   // Secondary links for mobile drawer
   const secondaryNavItems = [
