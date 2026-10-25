@@ -1,4 +1,6 @@
 import { Product, Review, LookbookItem } from './types';
+import { TENNIS_SKORT_AS_PRODUCT, WOMENS_COLLECTION_CLEAN_URL } from './data/tennisSkortProduct';
+export { WOMENS_COLLECTION_CLEAN_URL };
 import regeneratedImage1 from './assets/images/regenerated_image_1783024087886.png';
 import regeneratedImage2 from './assets/images/regenerated_image_1783024091462.png';
 
@@ -683,7 +685,7 @@ export const NAV_CATEGORIES = [
       { id: 'women-tshirts', name: 'T-Shirts', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1785175559/31d9084eb8b2edba03c8c387ade8915f_vyyvzj.jpg', collections: ['Oversized Collection'] },
       { id: 'women-hoodies', name: 'Hoodies & Sweatshirts', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875131/Screenshot_2026-07-12_at_10.20.20_PM_dbsjgc.png', collections: ['Hoodies'] },
       { id: 'women-joggers', name: 'Bottoms', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/BOT_ekpnyw.jpg', collections: [] as string[], comingSoon: true },
-      { id: 'women-gym-gear', name: 'TeeCode Gym Gear', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1783875303/GYM_yhkwnt.jpg', collections: [] as string[], comingSoon: true },
+      { id: 'women-gym-gear', name: 'TeeCode Gym Gear', image: 'https://res.cloudinary.com/dtzyjynai/image/upload/v1792948650/Screenshot_2026-10-25_at_22.41.10_efmzpy.png', collections: ['TeeCode Training Gear', 'Tennis & Active'], comingSoon: true },
     ],
   },
   {
@@ -2477,6 +2479,7 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
 
 // Append these to PRODUCTS array
 PRODUCTS.push(...NEW_PRODUCTS_TO_ADD);
+PRODUCTS.unshift(TENNIS_SKORT_AS_PRODUCT);
 
 // Real product image mapping
 const REAL_PRODUCT_IMAGES: Record<string, string[]> = {

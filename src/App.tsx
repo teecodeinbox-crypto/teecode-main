@@ -20,6 +20,7 @@ import PolicyView from './components/PolicyView';
 import ContactView from './components/ContactView';
 import OrderTrackingView from './components/OrderTrackingView';
 import WishlistView from './components/WishlistView';
+import WomensTennisSkortView from './components/WomensTennisSkortView';
 
 import { PRODUCTS } from './data';
 
@@ -37,14 +38,19 @@ function AppLayout() {
   const location = useLocation();
   const { cart, cartTotal, cartItemsCount, isCartOpen, setIsCartOpen, removeItem } = useCart();
 
+  const isDedicatedSkortPage =
+    location.pathname.includes('black-pleated-tennis-skort') ||
+    location.pathname === '/tennis-skort' ||
+    location.pathname === '/women-collection';
+
   return (
     <div className="flex flex-col min-h-screen bg-white text-street-black font-sans selection:bg-street-red selection:text-white relative">
       
       {/* Scroll to top on navigation */}
       <ScrollToTop />
 
-      {/* Header */}
-      <Header />
+      {/* Header (Dedicated Skort page includes its own TeeCode Gym Gear activewear header) */}
+      {!isDedicatedSkortPage && <Header />}
 
       {/* Main Viewport Content with transition layouts */}
       <main className="flex-1">
@@ -60,6 +66,10 @@ function AppLayout() {
               <Route path="/" element={<HomeView />} />
               <Route path="/shop" element={<ShopView />} />
               <Route path="/women/t-shirts" element={<ShopView />} />
+              <Route path="/shop/black-pleated-tennis-skort" element={<WomensTennisSkortView />} />
+              <Route path="/products/black-pleated-tennis-skort" element={<WomensTennisSkortView />} />
+              <Route path="/tennis-skort" element={<WomensTennisSkortView />} />
+              <Route path="/women-collection" element={<WomensTennisSkortView />} />
               <Route path="/shop/:productId" element={<ProductDetailsView />} />
               <Route path="/cart" element={<CartView />} />
               <Route path="/checkout" element={<CheckoutView />} />

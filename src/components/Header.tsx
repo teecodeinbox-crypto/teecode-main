@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ShoppingBag, Search, X, Menu, Heart, Package, ChevronDown, ChevronRight, Clock } from 'lucide-react';
+import { ShoppingBag, Search, X, Menu, Heart, Package, ChevronDown, ChevronRight, Clock, User, Sparkles } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { NAV_CATEGORIES, getCollectionFilterValue } from '../data';
@@ -24,8 +24,8 @@ export default function Header() {
   const [expandedMobileSubcat, setExpandedMobileSubcat] = useState<string | null>(null);
 
   const tickers = [
+    '✨ FREE SHIPPING ON ORDERS ABOVE ₹999',
     '💥 OVERSIZED DROP IS LIVE | USE CODE "STREET20" FOR ₹200 OFF',
-    '🚚 FREE COD & EXPRESS SHIPPING ACROSS INDIA',
     '⚡ 240 GSM HEAVYWEIGHT COTTON — UNISEX STREETWEAR SHAPES',
   ];
 
@@ -43,7 +43,9 @@ export default function Header() {
   };
 
   // Main desktop nav tabs
-  const mainNavItems: {id: string, path: string, label: string}[] = [];
+  const mainNavItems = [
+    { id: 'tennis-active', path: '/shop/black-pleated-tennis-skort', label: 'Tennis & Active' },
+  ];
 
   // Secondary links for mobile drawer
   const secondaryNavItems = [
@@ -157,7 +159,7 @@ export default function Header() {
               >
                 <Link
                   id={`nav-${cat.id}`}
-                  to={`/shop?gender=${cat.id}`}
+                  to={cat.id === 'women' ? '/shop?gender=women&category=women-gym-gear&coming-soon=true' : `/shop?gender=${cat.id}`}
                   className={`font-display text-xs font-semibold tracking-widest uppercase transition-colors relative py-2 flex items-center gap-1 ${
                     location.search.includes(`gender=${cat.id}`) ? 'text-street-red' : 'text-zinc-300 hover:text-white'
                   }`}
@@ -290,6 +292,16 @@ export default function Header() {
                   {wishlist.length}
                 </span>
               )}
+            </Link>
+
+            {/* Account */}
+            <Link
+              id="header-account-btn"
+              to="/track-order"
+              className="p-2 text-zinc-300 hover:text-white"
+              title="Account"
+            >
+              <User className="h-5 w-5" />
             </Link>
 
             {/* Track Order */}

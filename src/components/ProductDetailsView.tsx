@@ -23,10 +23,21 @@ import { Product } from '../types';
 import { SIZE_CHARTS, PRODUCTS } from '../data';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
+import WomensTennisSkortView from './WomensTennisSkortView';
 
 export default function ProductDetailsView() {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
+
+  // Route to dedicated bespoke view for Black Pleated Tennis Skort
+  if (
+    productId === 'black-pleated-tennis-skort' ||
+    productId === 'pleated-tennis-skort' ||
+    productId === 'tennis-skort'
+  ) {
+    return <WomensTennisSkortView />;
+  }
+
   const { addToCart } = useCart();
   const { isWishlisted, toggleWishlist } = useWishlist();
 

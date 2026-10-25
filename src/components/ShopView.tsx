@@ -1,20 +1,28 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { SlidersHorizontal, Search, RefreshCw, Grid, Star, Eye, MessageCircle, AlertTriangle, Clock, Sparkles, ArrowLeft, ChevronRight } from 'lucide-react';
+import { SlidersHorizontal, Search, RefreshCw, Grid, Star, Eye, MessageCircle, AlertTriangle, Clock, Sparkles, ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { PRODUCTS, SIZES, TSHIRT_TYPES, NAV_CATEGORIES, getCollectionFilterValue } from '../data';
 import { Product } from '../types';
 
 export default function ShopView() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchParams] = useSearchParams();
+  // Normalize search parameters, resolving any malformed encoded URLs (e.g. %26 instead of &)
+  let rawSearch = location.search;
+  if (rawSearch.includes('%26') || rawSearch.includes('%3D')) {
+    try {
+      rawSearch = decodeURIComponent(rawSearch);
+    } catch {}
+  }
+  const effectiveParams = new URLSearchParams(rawSearch.startsWith('?') ? rawSearch.slice(1) : rawSearch);
+
   const isWomenTshirtsRoute = location.pathname === '/women/t-shirts';
-  const queryFromUrl = searchParams.get('q') || '';
-  const typeFromUrl = searchParams.get('type') || null;
-  const genderFromUrl = isWomenTshirtsRoute ? 'women' : (searchParams.get('gender') || null);
-  const comingSoon = searchParams.get('coming-soon') === 'true';
-  const categoryFromUrl = isWomenTshirtsRoute ? 'women-tshirts' : (searchParams.get('category') || null);
+  const queryFromUrl = effectiveParams.get('q') || '';
+  const typeFromUrl = effectiveParams.get('type') || null;
+  const genderFromUrl = isWomenTshirtsRoute ? 'women' : (effectiveParams.get('gender') || null);
+  const comingSoon = effectiveParams.get('coming-soon') === 'true';
+  const categoryFromUrl = isWomenTshirtsRoute ? 'women-tshirts' : (effectiveParams.get('category') || null);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(PRODUCTS);
   const [localSearch, setLocalSearch] = useState(queryFromUrl);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -271,8 +279,89 @@ export default function ShopView() {
           );
         })()}
 
-        {/* Coming Soon Page — for empty subcategories */}
-        {comingSoon && categoryFromUrl && (() => {
+        {/* Women's Gym Gear Collection Showcase */}
+        {categoryFromUrl === 'women-gym-gear' && (() => {
+          return (
+            <div className="py-6 sm:py-10 space-y-10">
+              {/* Hero Banner */}
+              <div className="bg-neutral-900 text-white rounded-2xl p-6 sm:p-10 relative overflow-hidden shadow-xl text-left">
+                <div className="relative z-10 max-w-xl space-y-3">
+                  <span className="text-[11px] font-mono font-bold tracking-[0.25em] text-neutral-400 uppercase">
+                    WOMEN'S COLLECTION • TEECODE GYM GEAR
+                  </span>
+                  <h2 className="font-display font-black text-2xl sm:text-4xl uppercase tracking-tight text-white">
+                    PERFORMANCE. COMFORT. EVERYDAY MOVEMENT.
+                  </h2>
+                  <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed">
+                    Designed for active living. Discover the all-new Women’s Gym Gear collection, engineered with premium active fabrics, flattering high-rise silhouettes, and functional athletic detailing.
+                  </p>
+                </div>
+              </div>
+
+              {/* Featured Drop: Black Pleated Tennis Skort */}
+              <div>
+                <div className="flex items-center justify-between mb-6 pb-2 border-b border-neutral-200">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <h3 className="font-display font-black text-lg uppercase tracking-wider text-neutral-900">
+                      NEW DROP • NOW AVAILABLE
+                    </h3>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-neutral-500 uppercase">
+                    FIRST LOOK
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-neutral-50 rounded-2xl p-6 sm:p-8 border border-neutral-200 items-center">
+                  <div className="aspect-[4/5] max-w-md mx-auto rounded-xl overflow-hidden border border-neutral-200 shadow-sm">
+                    <img
+                      src="https://res.cloudinary.com/dtzyjynai/image/upload/v1792948650/Screenshot_2026-10-25_at_22.41.10_efmzpy.png"
+                      alt="Black Pleated Tennis Skort"
+                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                  <div className="space-y-4 text-left">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                      TeeCode Gym Gear — Women's Collection
+                    </span>
+                    <h4 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight text-neutral-950">
+                      Black Pleated Tennis Skort
+                    </h4>
+                    <p className="text-xs text-neutral-600 leading-relaxed">
+                      Sporty performance meets effortless style. Designed with a high-rise waistband, flattering pleated silhouette, and built-in shorts with functional side pocket.
+                    </p>
+
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-display font-black text-3xl text-neutral-950">
+                        ₹699
+                      </span>
+                      <span className="text-neutral-400 line-through text-base font-medium">
+                        MRP ₹1,499
+                      </span>
+                      <span className="bg-emerald-100 text-emerald-800 text-xs font-black uppercase px-2.5 py-0.5 rounded-full">
+                        53% OFF
+                      </span>
+                    </div>
+
+                    <div className="pt-2">
+                      <Link
+                        to="/shop/black-pleated-tennis-skort"
+                        className="inline-flex items-center gap-2 bg-neutral-950 hover:bg-neutral-800 text-white font-display font-black text-xs sm:text-sm tracking-widest uppercase px-6 py-3.5 rounded-lg transition-all shadow-md"
+                      >
+                        <span>VIEW PRODUCT & ORDER</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* Coming Soon Page — for other empty subcategories */}
+        {comingSoon && categoryFromUrl && categoryFromUrl !== 'women-gym-gear' && (() => {
           // Resolve the category name from NAV_CATEGORIES
           const genderCat = NAV_CATEGORIES.find(c => c.id === genderFromUrl);
           const subcatMatch = genderCat?.subcategories.find(s => s.id === categoryFromUrl);
