@@ -1,5 +1,6 @@
 import { Product, Review, LookbookItem } from './types';
 import { TENNIS_SKORT_AS_PRODUCT, WOMENS_COLLECTION_CLEAN_URL } from './data/tennisSkortProduct';
+import { RAISED_COUNTRY_TEE_PRODUCT } from './data/raisedCountryTeeProduct';
 export { WOMENS_COLLECTION_CLEAN_URL };
 import regeneratedImage1 from './assets/images/regenerated_image_1783024087886.png';
 import regeneratedImage2 from './assets/images/regenerated_image_1783024091462.png';
@@ -2479,6 +2480,7 @@ const NEW_PRODUCTS_TO_ADD: Product[] = [
 
 // Append these to PRODUCTS array
 PRODUCTS.push(...NEW_PRODUCTS_TO_ADD);
+PRODUCTS.unshift(RAISED_COUNTRY_TEE_PRODUCT);
 PRODUCTS.unshift(TENNIS_SKORT_AS_PRODUCT);
 
 // Real product image mapping

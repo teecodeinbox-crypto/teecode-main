@@ -21,6 +21,7 @@ import ContactView from './components/ContactView';
 import OrderTrackingView from './components/OrderTrackingView';
 import WishlistView from './components/WishlistView';
 import WomensTennisSkortView from './components/WomensTennisSkortView';
+import RaisedCountryTeeView from './components/RaisedCountryTeeView';
 
 import { PRODUCTS } from './data';
 
@@ -38,10 +39,11 @@ function AppLayout() {
   const location = useLocation();
   const { cart, cartTotal, cartItemsCount, isCartOpen, setIsCartOpen, removeItem } = useCart();
 
-  const isDedicatedSkortPage =
+  const isDedicatedProductPage =
     location.pathname.includes('black-pleated-tennis-skort') ||
     location.pathname === '/tennis-skort' ||
-    location.pathname === '/women-collection';
+    location.pathname === '/women-collection' ||
+    location.pathname.includes('raised-on-90s-country-graphic-tee');
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-street-black font-sans selection:bg-street-red selection:text-white relative">
@@ -49,8 +51,8 @@ function AppLayout() {
       {/* Scroll to top on navigation */}
       <ScrollToTop />
 
-      {/* Header (Dedicated Skort page includes its own TeeCode Gym Gear activewear header) */}
-      {!isDedicatedSkortPage && <Header />}
+      {/* Header (Dedicated product pages include their own TeeCode Gym Gear header) */}
+      {!isDedicatedProductPage && <Header />}
 
       {/* Main Viewport Content with transition layouts */}
       <main className="flex-1">
@@ -66,6 +68,9 @@ function AppLayout() {
               <Route path="/" element={<HomeView />} />
               <Route path="/shop" element={<ShopView />} />
               <Route path="/women/t-shirts" element={<ShopView />} />
+              <Route path="/products/raised-on-90s-country-graphic-tee" element={<RaisedCountryTeeView />} />
+              <Route path="/shop/raised-on-90s-country-graphic-tee" element={<RaisedCountryTeeView />} />
+              <Route path="/women/raised-on-90s-country-graphic-tee" element={<RaisedCountryTeeView />} />
               <Route path="/shop/black-pleated-tennis-skort" element={<WomensTennisSkortView />} />
               <Route path="/products/black-pleated-tennis-skort" element={<WomensTennisSkortView />} />
               <Route path="/tennis-skort" element={<WomensTennisSkortView />} />

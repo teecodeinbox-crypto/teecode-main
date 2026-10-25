@@ -24,6 +24,7 @@ import { SIZE_CHARTS, PRODUCTS } from '../data';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import WomensTennisSkortView from './WomensTennisSkortView';
+import RaisedCountryTeeView from './RaisedCountryTeeView';
 
 export default function ProductDetailsView() {
   const { productId } = useParams<{ productId: string }>();
@@ -36,6 +37,14 @@ export default function ProductDetailsView() {
     productId === 'tennis-skort'
   ) {
     return <WomensTennisSkortView />;
+  }
+
+  // Route to dedicated bespoke view for Raised On 90's Country Graphic Tee
+  if (
+    productId === 'raised-on-90s-country-graphic-tee' ||
+    productId === 'raised-on-90s-country'
+  ) {
+    return <RaisedCountryTeeView />;
   }
 
   const { addToCart } = useCart();
