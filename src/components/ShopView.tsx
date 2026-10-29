@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { SlidersHorizontal, Search, RefreshCw, Grid, Star, Eye, MessageCircle, AlertTriangle, Clock, Sparkles, ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
+import { SlidersHorizontal, Search, RefreshCw, Grid, Star, Eye, MessageCircle, AlertTriangle, Clock, Sparkles, ArrowLeft, ArrowRight, ChevronRight, Heart } from 'lucide-react';
 import { PRODUCTS, SIZES, TSHIRT_TYPES, NAV_CATEGORIES, getCollectionFilterValue } from '../data';
 import { Product } from '../types';
+import { useWishlist } from '../context/WishlistContext';
 
 export default function ShopView() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { isWishlisted, toggleWishlist } = useWishlist();
   // Normalize search parameters, resolving any malformed encoded URLs (e.g. %26 instead of &)
   let rawSearch = location.search;
   if (rawSearch.includes('%26') || rawSearch.includes('%3D')) {
@@ -602,7 +604,13 @@ export default function ShopView() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
                 className="group bg-white border border-zinc-200 overflow-hidden relative cursor-pointer flex flex-col justify-between hover:border-street-black transition-colors"
-                onClick={() => navigate(`/shop/${product.id}`)}
+                onClick={() =>
+                  navigate(
+                    product.id === 'oversized-zipper-face-mask-hoodie'
+                      ? '/men/oversized-zipper-face-mask-hoodie'
+                      : `/shop/${product.id}`
+                  )
+                }
               >
                 {/* Upper tag / banner */}
                 {product.tag && (
@@ -610,6 +618,27 @@ export default function ShopView() {
                     {product.tag}
                   </span>
                 )}
+
+                {/* Wishlist Button */}
+                <button
+                  id={`wishlist-btn-${product.id}`}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleWishlist(product);
+                  }}
+                  className="absolute top-2.5 right-16 z-20 p-1.5 rounded-full bg-white/90 hover:bg-white text-street-black shadow-xs transition-colors cursor-pointer"
+                  title={isWishlisted(product.id) ? 'Remove from wishlist' : 'Save to wishlist'}
+                  aria-label="Wishlist"
+                >
+                  <Heart
+                    className={`h-3.5 w-3.5 ${
+                      isWishlisted(product.id)
+                        ? 'fill-street-red text-street-red'
+                        : 'text-zinc-600'
+                    }`}
+                  />
+                </button>
 
                 <span className="absolute top-3 right-3 bg-street-red text-white text-[9px] font-mono font-bold px-2 py-0.5 z-10 tracking-wider uppercase">
                   {product.gsm} GSM
@@ -679,7 +708,11 @@ export default function ShopView() {
                       id={`shop-view-btn-${product.id}`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        navigate(`/shop/${product.id}`);
+                        navigate(
+                          product.id === 'oversized-zipper-face-mask-hoodie'
+                            ? '/men/oversized-zipper-face-mask-hoodie'
+                            : `/shop/${product.id}`
+                        );
                       }}
                       className="w-full bg-street-black hover:bg-street-red text-white py-2 font-display font-black text-[10px] tracking-widest uppercase flex items-center justify-center space-x-1 transition-colors"
                     >

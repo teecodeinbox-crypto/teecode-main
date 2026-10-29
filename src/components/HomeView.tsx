@@ -720,7 +720,13 @@ function ProductCard({ product }: ProductCardProps) {
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3 }}
       className="group bg-white border border-zinc-200 overflow-hidden relative cursor-pointer flex flex-col justify-between"
-      onClick={() => navigate(`/shop/${product.id}`)}
+      onClick={() =>
+        navigate(
+          product.id === 'oversized-zipper-face-mask-hoodie'
+            ? '/men/oversized-zipper-face-mask-hoodie'
+            : `/shop/${product.id}`
+        )
+      }
     >
       {/* Upper tag / banner */}
       {product.tag && (
@@ -731,7 +737,7 @@ function ProductCard({ product }: ProductCardProps) {
 
       {/* Secondary Quick-Add / Info Tag */}
       <span className="absolute top-3 right-3 bg-street-red text-white text-[9px] font-mono font-bold px-2 py-0.5 z-10 tracking-wider uppercase">
-        240 GSM
+        {product.gsm || 240} GSM
       </span>
 
       {/* Image Container */}
@@ -780,7 +786,11 @@ function ProductCard({ product }: ProductCardProps) {
           <button
             onClick={(e) => {
               e.stopPropagation();
-              navigate(`/shop/${product.id}`);
+              navigate(
+                product.id === 'oversized-zipper-face-mask-hoodie'
+                  ? '/men/oversized-zipper-face-mask-hoodie'
+                  : `/shop/${product.id}`
+              );
             }}
             className="w-full bg-street-black hover:bg-street-red text-white py-2 font-display font-black text-[10px] tracking-widest uppercase flex items-center justify-center space-x-1 transition-colors"
           >

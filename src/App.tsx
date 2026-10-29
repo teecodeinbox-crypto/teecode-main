@@ -75,6 +75,11 @@ function AppLayout() {
               <Route path="/products/black-pleated-tennis-skort" element={<WomensTennisSkortView />} />
               <Route path="/tennis-skort" element={<WomensTennisSkortView />} />
               <Route path="/women-collection" element={<WomensTennisSkortView />} />
+              <Route path="/men/oversized-zipper-face-mask-hoodie" element={<ProductDetailsView />} />
+              <Route path="/shop/oversized-zipper-face-mask-hoodie" element={<ProductDetailsView />} />
+              <Route path="/products/oversized-zipper-face-mask-hoodie" element={<ProductDetailsView />} />
+              <Route path="/men/:productId" element={<ProductDetailsView />} />
+              <Route path="/products/:productId" element={<ProductDetailsView />} />
               <Route path="/shop/:productId" element={<ProductDetailsView />} />
               <Route path="/cart" element={<CartView />} />
               <Route path="/checkout" element={<CheckoutView />} />

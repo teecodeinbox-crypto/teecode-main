@@ -26,6 +26,23 @@ export interface Product {
   washingInstructions?: string[];
   seoTitle?: string;
   metaDescription?: string;
+  brand?: string;
+  features?: string[];
+  seoKeywords?: string[];
+  customSizeChart?: {
+    title: string;
+    columns: string[];
+    rows: Array<{
+      size: string;
+      chest?: string;
+      shoulder?: string;
+      length?: string;
+      sleeve?: string;
+      [key: string]: string | undefined;
+    }>;
+    instructions: string;
+    notes?: string[];
+  };
   productDetails?: {
     fabric?: string;
     fit?: string;

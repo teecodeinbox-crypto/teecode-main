@@ -27,22 +27,22 @@ import WomensTennisSkortView from './WomensTennisSkortView';
 import RaisedCountryTeeView from './RaisedCountryTeeView';
 
 export default function ProductDetailsView() {
-  const { productId } = useParams<{ productId: string }>();
+  const { productId: rawProductId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
 
   // Route to dedicated bespoke view for Black Pleated Tennis Skort
   if (
-    productId === 'black-pleated-tennis-skort' ||
-    productId === 'pleated-tennis-skort' ||
-    productId === 'tennis-skort'
+    rawProductId === 'black-pleated-tennis-skort' ||
+    rawProductId === 'pleated-tennis-skort' ||
+    rawProductId === 'tennis-skort'
   ) {
     return <WomensTennisSkortView />;
   }
 
   // Route to dedicated bespoke view for Raised On 90's Country Graphic Tee
   if (
-    productId === 'raised-on-90s-country-graphic-tee' ||
-    productId === 'raised-on-90s-country'
+    rawProductId === 'raised-on-90s-country-graphic-tee' ||
+    rawProductId === 'raised-on-90s-country'
   ) {
     return <RaisedCountryTeeView />;
   }
@@ -50,11 +50,23 @@ export default function ProductDetailsView() {
   const { addToCart } = useCart();
   const { isWishlisted, toggleWishlist } = useWishlist();
 
-  // Find product by id (supporting alias for legacy id)
+  // Resolve effective productId from param or pathname
+  const effectiveProductId =
+    rawProductId ||
+    (window.location.pathname.includes('oversized-zipper-face-mask-hoodie')
+      ? 'oversized-zipper-face-mask-hoodie'
+      : '');
+
+  // Find product by id (supporting aliases)
   const product =
-    PRODUCTS.find((p) => p.id === productId) ||
-    (productId === 'teecode-premium-370-gsm-oversized-hoodie' ||
-    productId === 'teecode-premium-350-gsm-hoodie'
+    PRODUCTS.find((p) => p.id === effectiveProductId) ||
+    (effectiveProductId === 'oversized-zipper-face-mask-hoodie' ||
+    effectiveProductId === 'mens-oversized-zipper-face-mask-hoodie' ||
+    effectiveProductId === 'zipper-face-mask-hoodie'
+      ? PRODUCTS.find((p) => p.id === 'oversized-zipper-face-mask-hoodie')
+      : undefined) ||
+    (effectiveProductId === 'teecode-premium-370-gsm-oversized-hoodie' ||
+    effectiveProductId === 'teecode-premium-350-gsm-hoodie'
       ? PRODUCTS.find((p) => p.id === 'premium-350-gsm-hoodie')
       : undefined);
 
@@ -73,11 +85,12 @@ export default function ProductDetailsView() {
     );
   }
 
-  // Determine default color: prefer White if available, otherwise first color
+  // Determine default color: prefer Black if first color, otherwise prefer White if available, otherwise first color
   const defaultColor =
+    (product.colors[0]?.name.toLowerCase() === 'black' ? product.colors[0].name : null) ||
     product.colors.find((c) => c.name.toLowerCase() === 'white')?.name ||
     product.colors[0]?.name ||
-    'White';
+    'Black';
 
   const [selectedSize, setSelectedSize] = useState<string>('M');
   const [selectedColor, setSelectedColor] = useState<string>(defaultColor);
@@ -155,6 +168,67 @@ export default function ProductDetailsView() {
     }
   }, [product.metaDescription]);
 
+  // Schema.org Product JSON-LD Structured Data & Canonical Link
+  useEffect(() => {
+    const canonicalPath = product.id === 'oversized-zipper-face-mask-hoodie'
+      ? '/men/oversized-zipper-face-mask-hoodie'
+      : `/shop/${product.id}`;
+    const canonicalUrl = `https://www.teecode.store${canonicalPath}`;
+
+    // Canonical Link
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    const prevCanonical = canonicalLink.href;
+    canonicalLink.href = canonicalUrl;
+
+    // Schema.org Structured Data
+    const priceVal = product.salePrice || product.price;
+    const schemaData = {
+      '@context': 'https://schema.org/',
+      '@type': 'Product',
+      name: product.name,
+      image: displayImages,
+      description: product.description,
+      brand: {
+        '@type': 'Brand',
+        name: product.brand || 'Teecode',
+      },
+      offers: {
+        '@type': 'Offer',
+        url: canonicalUrl,
+        priceCurrency: 'INR',
+        price: priceVal,
+        priceValidUntil: '2027-12-31',
+        availability: 'https://schema.org/InStock',
+        itemCondition: 'https://schema.org/NewCondition',
+      },
+      category: "Men's Clothing > Hoodies",
+    };
+
+    let scriptTag = document.getElementById('product-schema-jsonld') as HTMLScriptElement;
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.id = 'product-schema-jsonld';
+      scriptTag.type = 'application/ld+json';
+      document.head.appendChild(scriptTag);
+    }
+    scriptTag.textContent = JSON.stringify(schemaData);
+
+    return () => {
+      if (canonicalLink && prevCanonical) {
+        canonicalLink.href = prevCanonical;
+      }
+      const existingScript = document.getElementById('product-schema-jsonld');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, [product, displayImages]);
+
   // Dynamic alt text generator
   const getViewLabel = useCallback((idx: number) => {
     switch (idx) {
@@ -227,7 +301,7 @@ export default function ProductDetailsView() {
 
   const currentPrice = product.salePrice || product.price;
   const savingsAmount = product.salePrice ? product.price - product.salePrice : 0;
-  const selectedChart = SIZE_CHARTS[product.fitType || 'Oversized'];
+  const selectedChart = product.customSizeChart || SIZE_CHARTS[product.fitType || 'Oversized'];
 
   // Add to Bag
   const handleAddToCart = () => {
@@ -458,6 +532,11 @@ export default function ProductDetailsView() {
                     <span className="bg-emerald-50 text-emerald-800 border border-emerald-300 font-mono font-bold text-xs px-2.5 py-1 rounded tracking-wider uppercase inline-flex items-center">
                       You Save ₹{savingsAmount.toLocaleString('en-IN')}
                     </span>
+                    {product.tag && (
+                      <span className="bg-street-red text-white font-mono font-bold text-xs px-2.5 py-1 tracking-wider uppercase inline-flex items-center shadow-xs">
+                        {product.tag}
+                      </span>
+                    )}
                   </>
                 )}
               </div>
@@ -728,7 +807,74 @@ export default function ProductDetailsView() {
                       className="overflow-hidden border-t border-zinc-200"
                     >
                       <div className="p-4 bg-white font-mono text-xs space-y-2 text-zinc-700">
-                        {isHoodieProduct ? (
+                        {product.productDetails ? (
+                          <>
+                            {product.productDetails.fabric && (
+                              <div className="flex justify-between border-b border-zinc-100 pb-2">
+                                <span className="text-zinc-500 font-semibold uppercase">Fabric:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.fabric}
+                                </span>
+                              </div>
+                            )}
+                            {product.productDetails.fit && (
+                              <div className="flex justify-between border-b border-zinc-100 pb-2">
+                                <span className="text-zinc-500 font-semibold uppercase">Fit:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.fit}
+                                </span>
+                              </div>
+                            )}
+                            {product.productDetails.hood && (
+                              <div className="flex justify-between border-b border-zinc-100 pb-2">
+                                <span className="text-zinc-500 font-semibold uppercase">Hood:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.hood}
+                                </span>
+                              </div>
+                            )}
+                            {product.productDetails.pocket && (
+                              <div className="flex justify-between border-b border-zinc-100 pb-2">
+                                <span className="text-zinc-500 font-semibold uppercase">Pocket:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.pocket}
+                                </span>
+                              </div>
+                            )}
+                            {product.productDetails.sleeves && (
+                              <div className="flex justify-between border-b border-zinc-100 pb-2">
+                                <span className="text-zinc-500 font-semibold uppercase">Sleeves:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.sleeves}
+                                </span>
+                              </div>
+                            )}
+                            {product.productDetails.construction && (
+                              <div className="flex justify-between border-b border-zinc-100 pb-2">
+                                <span className="text-zinc-500 font-semibold uppercase">Construction:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.construction}
+                                </span>
+                              </div>
+                            )}
+                            {product.productDetails.feel && (
+                              <div className="flex justify-between border-b border-zinc-100 pb-2">
+                                <span className="text-zinc-500 font-semibold uppercase">Feel:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.feel}
+                                </span>
+                              </div>
+                            )}
+                            {product.productDetails.style && (
+                              <div className="flex justify-between">
+                                <span className="text-zinc-500 font-semibold uppercase">Style:</span>
+                                <span className="text-street-black font-bold text-right">
+                                  {product.productDetails.style}
+                                </span>
+                              </div>
+                            )}
+                          </>
+                        ) : isHoodieProduct ? (
                           <>
                             <div className="flex justify-between border-b border-zinc-100 pb-2">
                               <span className="text-zinc-500 font-semibold uppercase">Fabric:</span>
@@ -1057,10 +1203,21 @@ export default function ProductDetailsView() {
                               <td className="p-3 font-bold border-r border-zinc-200 bg-zinc-100 sm:p-4">
                                 {row.size}
                               </td>
-                              <td className="p-3 sm:p-4">{row.chest} inches</td>
-                              <td className="p-3 sm:p-4">{row.length} inches</td>
-                              <td className="p-3 sm:p-4">{row.sleeve} inches</td>
-                              <td className="p-3 sm:p-4">{row.shoulder} inches</td>
+                              {selectedChart.columns.slice(1).map((col, cIdx) => {
+                                const colLower = col.toLowerCase();
+                                let val: string | undefined = '';
+                                if (colLower.includes('chest')) val = row.chest;
+                                else if (colLower.includes('shoulder')) val = row.shoulder;
+                                else if (colLower.includes('sleeve')) val = row.sleeve;
+                                else if (colLower.includes('length')) val = row.length;
+                                else val = (row as any)[col];
+
+                                return (
+                                  <td key={cIdx} className="p-3 sm:p-4">
+                                    {val ? `${val} inches` : '—'}
+                                  </td>
+                                );
+                              })}
                             </tr>
                           ))}
                         </tbody>
@@ -1076,6 +1233,17 @@ export default function ProductDetailsView() {
                         <p>{selectedChart.instructions}</p>
                       </div>
                     </div>
+
+                    {'notes' in selectedChart && Array.isArray((selectedChart as any).notes) && (selectedChart as any).notes.length > 0 && (
+                      <div className="bg-zinc-50 p-4 border border-zinc-200 font-mono text-[11px] text-zinc-700 space-y-2 text-left">
+                        <p className="font-bold uppercase text-street-black tracking-wider">How to Choose Your Size:</p>
+                        <ul className="list-disc list-inside space-y-1 text-zinc-600">
+                          {((selectedChart as any).notes as string[]).map((note, nIdx) => (
+                            <li key={nIdx}>{note}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </>
                 )}
 
